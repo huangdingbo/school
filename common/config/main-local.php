@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=school',
+            'dsn' => 'mysql:host=localhost;dbname=iSchoolyard',
             'username' => 'root',
             'password' => 'Huang2018.work',
             'charset' => 'utf8',
@@ -17,6 +17,4 @@ return [
             'useFileTransport' => true,
         ],
     ],
-    'language' => 'zh-CN',
-    'timeZone' => 'Asia/shanghai',
 ];
