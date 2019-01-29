@@ -30,6 +30,7 @@ class TestController extends Controller
         echo 1;
     }
     public function actionSession(){
+        var_dump(date('Y-m-d H:i:s',time()));exit;
         echo "<pre>";
         var_dump($user = \Yii::$app->user->identity->username);
     }

@@ -17,7 +17,7 @@
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                <input type="text" name="q" class="form-control" placeholder="搜索..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -30,7 +30,7 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
+                    ['label' => '智慧校园Demo', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
@@ -54,6 +54,103 @@
                                         'items' => [
                                             ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
                                             ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    /*成绩管理模块*/
+                    [
+                        'label' => '成绩管理模块',
+                        'icon' => 'share',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => '学生成绩查询', 'icon' => 'file-code-o', 'url' => ['/gii'],],
+                            ['label' => '录入学生成绩', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            [
+                                'label' => 'Level One',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
+                                    [
+                                        'label' => 'Level Two',
+                                        'icon' => 'circle-o',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    /*档案管理模块*/
+                    [
+                        'label' => '档案管理模块',
+                        'icon' => 'share',
+                        'url' => '#',
+                        'items' => [
+                            [
+                                'label' => '学生档案管理',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => '#',],
+                                    [
+                                        'label' => '其他待配置',
+                                        'icon' => 'circle-o',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            [
+                                'label' => '教师档案管理',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => '#',],
+                                    [
+                                        'label' => '其他待配置',
+                                        'icon' => 'circle-o',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    /*教学管理模块*/
+                    [
+                        'label' => '教学管理模块',
+                        'icon' => 'share',
+                        'url' => '#',
+                        'items' => [
+//                            ['label' => '学生成绩查询', 'icon' => 'file-code-o', 'url' => ['/gii'],],
+//                            ['label' => '录入学生成绩', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            [
+                                'label' => '课程管理',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '查看课表', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '排课', 'icon' => 'circle-o', 'url' => '#',],
+                                    [
+                                        'label' => '其他待配置',
+                                        'icon' => 'circle-o',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
                                         ],
                                     ],
                                 ],

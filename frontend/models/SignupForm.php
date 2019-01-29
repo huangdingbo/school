@@ -17,6 +17,7 @@ class SignupForm extends Model
     /**
      * {@inheritdoc}
      */
+
     public function rules()
     {
         return [
@@ -33,6 +34,14 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+        ];
+    }
+    public function attributeLabels()
+    {
+        return [
+            'username' => '姓名',
+            'email' => '邮箱',
+            'password' => '密码',
         ];
     }
 
