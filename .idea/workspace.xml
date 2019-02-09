@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14195127-8217-420c-83ac-7415b8750fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/LolController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/TestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/LolController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/school.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/school.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolWeb/test/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,9 +53,42 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/config/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/controllers/StudentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/LolController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="771">
+              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+              <folding>
+                <element signature="e#116#143#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/controllers/LolController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+              <folding>
+                <element signature="e#119#146#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -63,6 +107,10 @@
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/schoolWeb/web/index.php" />
         <option value="$PROJECT_DIR$/schoolWeb/test/test.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/StudentController.php" />
+        <option value="$PROJECT_DIR$/api/controllers/LolControler.php" />
+        <option value="$PROJECT_DIR$/api/controllers/LolController.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/LolController.php" />
       </list>
     </option>
   </component>
@@ -142,6 +190,7 @@
       <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
       <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/linslin/yii2-curl" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -155,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,10 +211,51 @@
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="linslin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="linslin" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-curl" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,6 +271,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\school\backend\controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\school\schoolWeb" />
     </key>
@@ -211,6 +303,8 @@
       <workItem from="1546964777311" duration="82000" />
       <workItem from="1547356757214" duration="610000" />
       <workItem from="1547413448528" duration="36000" />
+      <workItem from="1548979398851" duration="1249000" />
+      <workItem from="1549691270721" duration="9131000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1547048945114</created>
@@ -223,12 +317,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2831000" />
+    <option name="totallyTimeSpent" value="13211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13113007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13326226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -281,6 +375,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/config/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/StudentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/curl/curl_d.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/LolController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding>
+            <element signature="e#116#143#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/linslin/yii2-curl/Curl.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/LolController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+          <folding>
+            <element signature="e#119#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

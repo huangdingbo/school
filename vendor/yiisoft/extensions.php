@@ -75,4 +75,13 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
+  'linslin/yii2-curl' => 
+  array (
+    'name' => 'linslin/yii2-curl',
+    'version' => '1.2.1.0',
+    'alias' => 
+    array (
+      '@linslin/yii2/curl' => $vendorDir . '/linslin/yii2-curl',
+    ),
+  ),
 );

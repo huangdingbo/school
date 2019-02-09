@@ -29,6 +29,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-datepicker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/linslin/yii2-curl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/complex" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
