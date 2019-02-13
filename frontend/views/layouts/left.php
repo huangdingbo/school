@@ -91,6 +91,7 @@
                     [
                         'label' => '档案管理模块',
                         'icon' => 'share',
+                        'class'=>'fa-clipboard',
                         'url' => '#',
                         'items' => [
                             [
@@ -98,7 +99,7 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['student/index']),],
                                     [
                                         'label' => '其他待配置',
                                         'icon' => 'circle-o',

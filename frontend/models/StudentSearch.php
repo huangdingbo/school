@@ -82,10 +82,19 @@ class StudentSearch extends Student
     }
 
     public function dealExportData($models){
+
         foreach ($models as &$item){
             $item->type = $item->type == 1 ? '理科' : '文科';
+            $item->sex = $item->sex == 1 ? '男' : '女';
+            $item->grade = $item->grade.'届';
+            $item->banji = (Class0::find()->select('name')->where(['id'=>$item->banji])->one())->name;
+            $item->duty = (Duty::find()->select('name')->where(['id'=>$item->duty])->one())->name;
+            $item->political_landscape = (Political::find()->select('name')->where(['id'=>$item->political_landscape,'type'=>'1'])->one())->name;
+            unset($item->grade_class);
+            unset($item->insert_time);
+            unset($item->update_time);
+            unset($item->pic);
         }
-
         return $models;
     }
 }

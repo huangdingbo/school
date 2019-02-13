@@ -33,48 +33,88 @@ $this->params['breadcrumbs'][] = $this->title;
             "StudentSearch[type]"=>isset($searchCondition["StudentSearch"]["type"]) ? $searchCondition["StudentSearch"]["type"] : '',
             "StudentSearch[isExport]"=>'1',
             ], ['class' => 'btn btn-info']) ?>
-        <?= Html::a('模板下载', ['create'], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('模板下载', ['download'], ['class' => 'btn btn-warning']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-//            ['class' => 'yii\grid\SerialColumn'],
-
-            'student_id',
-            'test_id',
-            'name',
-//            'sex',
-        [
-            'attribute' => 'sex',
-            'label' => '性别',
-            'value' => function($dataProvider){
-                return $dataProvider->sex == 1 ? '男' : '女';
-            },
-            'filter' => array('1' => '男' ,'2' => '女')
+        'layout'=> '{items}<div class="text-left tooltip-demo">{pager}</div>',
+        'pager'=>[
+            //'options'=>['class'=>'hidden']//关闭分页
+            'firstPageLabel'=>"首页",
+            'prevPageLabel'=>'上一页',
+            'nextPageLabel'=>'下一页',
+            'lastPageLabel'=>'尾页',
         ],
-            //'born_time',
-            'grade',
-            'banji',
-            'duty',
-            //'home_address',
-            //'admission_time',
-            'political_landscape',
-            //'pic',
-//            'type',
+        'columns' => [
+            [
+                'attribute' => 'student_id',
+                'value' => 'student_id',
+                'headerOptions' => ['width' => '130'],
+            ],
+            [
+                'attribute' => 'test_id',
+                'value' => 'test_id',
+                'headerOptions' => ['width' => '130'],
+            ],
+            [
+                'attribute' => 'name',
+                'value' => 'name',
+                'headerOptions' => ['width' => '130'],
+            ],
+            [
+                'attribute' => 'sex',
+                'label' => '性别',
+                'value' => function($dataProvider){
+                    return $dataProvider->sex == 1 ? '男' : '女';
+                },
+                'filter' => array('1' => '男' ,'2' => '女'),
+            ],
+            [
+                'attribute' => 'grade',
+                'label' => '年级',
+                'value' => 'grade0.name',
+                'filter' => \frontend\models\Grade::find()
+                    ->select('name,the')
+                    ->indexBy('the')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'banji',
+                'label' => '班级',
+                'value' => 'class0.name',
+                'filter' => \frontend\models\Class0::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'duty',
+                'label' => '职务',
+                'value' => 'duty0.name',
+                'filter' => \frontend\models\Duty::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'political_landscape',
+                'label' => '政治面貌',
+                'value' => 'political0.name',
+                'filter' => \frontend\models\Political::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
             [
                 'attribute' => 'type',
                 'label' => '类型',
                 'value' => function($dataProvider){
-                    return $dataProvider->sex == 1 ? '理科' : '文科';
+                    return $dataProvider->type == 1 ? '理科' : '文科';
                 },
-                'filter' => array('1' => '理科' ,'0' => '文科')
+                'filter' => array('1' => '理科' ,'0' => '文科'),
             ],
-            //'grade_class',
-            //'insert_time',
-            //'update_time',
-
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view}{update}{delete}',
@@ -108,7 +148,7 @@ $this->params['breadcrumbs'][] = $this->title;
     // 更新操作
     Modal::begin([
         'id' => 'update-modal',
-        'header' => '<h4 class="modal-title">修改</h4>',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">修改</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
     ]);
     Modal::end();
@@ -130,7 +170,7 @@ JS;
     // 查看操作
     Modal::begin([
         'id' => 'view-modal',
-        'header' => '<h4 class="modal-title">查看</h4>',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">查看</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
     ]);
     Modal::end();

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="student-view">
 
-    <h1><?= Html::img($model->pic,['height'=>'100','width'=>'100']) ?></h1>
+    <h1><?= Html::img($model->pic,['height'=>'120','width'=>'150']) ?></h1>
 
 
     <?= DetailView::widget([
@@ -22,15 +22,43 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'student_id',
             'test_id',
-            'sex',
+            [
+                'attribute' => 'sex',
+                'label' => '性别',
+                'value'=>function($model){
+                    return $model->sex == 1 ? '男' : '女';
+                }
+            ],
             'born_time',
-            'grade',
-            'banji',
-            'duty',
+            [
+                'attribute' => 'grade',
+                'label' => '年级',
+                'value'=>$model->grade0->name,
+            ],
+            [
+                'attribute' => 'banji',
+                'label' => '班级',
+                'value'=>$model->class0->name,
+            ],
+            [
+                'attribute' => 'duty',
+                'label' => '职务',
+                'value'=>$model->duty0->name,
+            ],
             'home_address',
             'admission_time',
-            'political_landscape',
-            'type',
+            [
+                'attribute' => 'political_landscape',
+                'label' => '政治面貌',
+                'value'=>$model->political0->name,
+            ],
+            [
+                'attribute' => 'sex',
+                'label' => '性别',
+                'value'=>function($model){
+                    return $model->type == 1 ? '理科' : '文科';
+                }
+            ],
             'insert_time',
             'update_time',
         ],

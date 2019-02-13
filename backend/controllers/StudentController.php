@@ -4,6 +4,10 @@
  * User: 黄定波
  * Date: 2019/2/11
  * Time: 18:07
+ *
+ *
+ * 添加学生表假数据
+ *
  */
 namespace backend\controllers;
 use yii\db\Query;

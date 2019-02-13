@@ -7,6 +7,7 @@ use frontend\models\FileImportForm;
 use Yii;
 use frontend\models\Student;
 use frontend\models\StudentSearch;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -45,10 +46,15 @@ class StudentController extends Controller
         $searchCondition = Yii::$app->request->queryParams; //获得搜索参数
 
         if (isset($searchCondition["StudentSearch"]["isExport"]) && $searchCondition["StudentSearch"]["isExport"] == 1){
+            //导出不适应分页，把默认的20条改的很大
+            $dataProvider->setPagination(new Pagination([
+                'defaultPageSize' => 1000000,
+                'pageSizeLimit' => [1, 1000000]
+            ]));
 
             $models = $dataProvider->getModels();
 
-            $searchModel->dealExportData($models); //处理模型数据3
+            $searchModel->dealExportData($models); //处理模型数据
 
             $excel = new SaveExcel([
 
@@ -88,8 +94,8 @@ class StudentController extends Controller
     {
         $data = Yii::$app->request->post();
         $model = new Student();
-        $data = isset($data['Student']['pic']) ? $model->dealData($data) : $data;
-        if ($model->load($data) && $model->save()) {
+        $data = isset($data['Student']['pic']) ? Student::dealPicData($data) : $data;
+        if ($model->load($data) && $model->save(false)) {
             return $this->redirect(['student/index']);
         }
 
@@ -109,7 +115,7 @@ class StudentController extends Controller
     {
         $model = $this->findModel($id);
         $data = Yii::$app->request->post();
-        $data = isset($data['Student']['pic']) ? $model->dealData($data) : $data;
+        $data = isset($data['Student']['pic']) ? Student::dealPicData($data) : $data;
         if ($model->load($data) && $model->save()) {
             return $this->redirect(['index']);
         }
@@ -146,7 +152,7 @@ class StudentController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('请求的页面不存在。');
     }
 
     public function actionImport(){
@@ -172,19 +178,36 @@ class StudentController extends Controller
                 $stuentModel = new Student();
                 $dataModel = $stuentModel->importData($fileName);
 
-                foreach ($dataModel as $key => $item){
-                    if ($stuentModel->load($item) && $stuentModel->save(false)){
-                        \Yii::$app->session->setFlash('success','导入成功');
+                foreach ($dataModel as $item){
+                    $_model = clone $stuentModel; //克隆对象
+                    if ($_model->load($item) && $_model->save()){
+                       continue;
                     }else{
                         \Yii::$app->session->setFlash('success','导入失败');
                     }
                 }
-
-
-//                return $this->redirect('student/index');
+                \Yii::$app->session->setFlash('success','导入成功');
+                return $this->redirect(array('/student/index'));
             }
         }
 
         return $this->render('import',['model'=>$model]);
+    }
+
+    //模板下载
+    public function actionDownload(){
+        $file = \Yii::getAlias('@frontendDownload').'/excel'.'/'.'学生信息表.xlsx';
+        if (!file_exists($file)){
+            Yii::$app->session->setFlash('warning','文件不存在');
+            return $this->redirect(array('/student/index'));
+        }else{
+            $wrstr = htmlspecialchars_decode(file_get_contents($file));
+            $outfile='学生信息表.xlsx';
+            header('Content-type: application/octet-stream; charset=utf8');
+            Header("Accept-Ranges: bytes");
+            header('Content-Disposition: attachment; filename='.$outfile);
+            echo $wrstr;
+            exit();
+        }
     }
 }
