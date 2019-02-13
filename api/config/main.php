@@ -23,7 +23,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'advanced-api',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -45,6 +45,10 @@ return [
             ],
         ],
         */
+        //配置默认返回json数据格式
+        'response' => [
+            'format' => 'json'
+        ],
     ],
     'params' => $params,
 ];

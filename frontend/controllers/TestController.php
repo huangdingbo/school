@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: huang
+ * Login: huang
  * Date: 2019/1/7
  * Time: 23:47
  */
@@ -30,6 +30,7 @@ class TestController extends Controller
         echo 1;
     }
     public function actionSession(){
+        var_dump(date('Y-m-d H:i:s',time()));exit;
         echo "<pre>";
         var_dump($user = \Yii::$app->user->identity->username);
     }

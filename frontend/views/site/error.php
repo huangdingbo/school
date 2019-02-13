@@ -22,10 +22,10 @@ $this->title = $name;
             </p>
 
             <p>
-                The above error occurred while the Web server was processing your request.
-                Please contact us if you think this is a server error. Thank you.
-                Meanwhile, you may <a href='<?= Yii::$app->homeUrl ?>'>return to dashboard</a> or try using the search
-                form.
+                上述错误是在Web服务器处理您的请求时发生的。
+                如果您认为这是服务器错误，请与我们联系。谢谢你！
+                与此同时,你可能 <a href='<?= Yii::$app->homeUrl ?>'>回到仪表板</a> 或者尝试使用搜索
+                的形式。
             </p>
 
             <form class='search-form'>

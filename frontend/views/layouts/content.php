@@ -37,10 +37,11 @@ use dmstr\widgets\Alert;
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.0
+        <b>版本号</b> <?=\Yii::$app->params['version'];?>
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>智慧校园Demo &copy; 2019 <a href="http://almsaeedstudio.com">黄定波博客</a>,</strong> 所有权利保留。
+    <stong><?=\Yii::$app->params['ICP'];?></stong>
+
 </footer>
 
 <!-- Control Sidebar -->
@@ -48,7 +49,7 @@ use dmstr\widgets\Alert;
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
         <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="glyphicon glyphicon-send"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">

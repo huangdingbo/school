@@ -11,10 +11,26 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $rememberMe = true;
-
+    public $rememberMe = false;
+    public $verifyCode;
     private $_user;
 
+    //添加验证码验证类
+    public function scenarios() {
+        $scenarios = parent::scenarios();
+        $scenarios['login'] = ['username', 'password', 'rememberMe', 'verifyCode'];
+        return $scenarios;
+    }
+
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => '姓名',
+            'rememberMe' => '记住密码',
+            'password' => '密码',
+        ];
+    }
 
     /**
      * {@inheritdoc}
@@ -28,6 +44,7 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            ['verifyCode', 'captcha', 'on' => 'login'], //验证码
         ];
     }
 
