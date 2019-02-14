@@ -8,7 +8,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\TeacherSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
+/* @var $searchCondition */
 $this->title = '教师档案管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -20,16 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('添加教师信息', ['create'], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('导入教师信息', ['import'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('导出教师信息', ['index',
-            "StudentSearch[student_id]"=>isset($searchCondition["StudentSearch"]["student_id"]) ? $searchCondition["StudentSearch"]["student_id"] : '',
-            "StudentSearch[test_id]"=>isset($searchCondition["StudentSearch"]["test_id"]) ? $searchCondition["StudentSearch"]["test_id"] : '',
-            "StudentSearch[name]"=>isset($searchCondition["StudentSearch"]["name"]) ? $searchCondition["StudentSearch"]["name"] : '',
-            "StudentSearch[sex]"=>isset($searchCondition["StudentSearch"]["sex"]) ? $searchCondition["StudentSearch"]["sex"] : '',
-            "StudentSearch[grade]"=>isset($searchCondition["StudentSearch"]["grade"]) ? $searchCondition["StudentSearch"]["grade"] : '',
-            "StudentSearch[banji]"=>isset($searchCondition["StudentSearch"]["banji"]) ? $searchCondition["StudentSearch"]["banji"] : '',
-            "StudentSearch[duty]"=>isset($searchCondition["StudentSearch"]["duty"]) ? $searchCondition["StudentSearch"]["duty"] : '',
-            "StudentSearch[political_landscape]"=>isset($searchCondition["StudentSearch"]["political_landscape"]) ? $searchCondition["StudentSearch"]["political_landscape"] : '',
-            "StudentSearch[type]"=>isset($searchCondition["StudentSearch"]["type"]) ? $searchCondition["StudentSearch"]["type"] : '',
-            "StudentSearch[isExport]"=>'1',
+            "TeacherSearch[teacher_id]"=>isset($searchCondition["TeacherSearch"]["teacher_id"]) ? $searchCondition["TeacherSearch"]["teacher_id"] : '',
+            "TeacherSearch[name]"=>isset($searchCondition["TeacherSearch"]["name"]) ? $searchCondition["TeacherSearch"]["name"] : '',
+            "TeacherSearch[sex]"=>isset($searchCondition["TeacherSearch"]["sex"]) ? $searchCondition["TeacherSearch"]["sex"] : '',
+            "TeacherSearch[grade]"=>isset($searchCondition["TeacherSearch"]["grade"]) ? $searchCondition["TeacherSearch"]["grade"] : '',
+            "TeacherSearch[banji]"=>isset($searchCondition["TeacherSearch"]["banji"]) ? $searchCondition["TeacherSearch"]["banji"] : '',
+            "TeacherSearch[duty]"=>isset($searchCondition["TeacherSearch"]["duty"]) ? $searchCondition["TeacherSearch"]["duty"] : '',
+            "TeacherSearch[political_landscape]"=>isset($searchCondition["TeacherSearch"]["political_landscape"]) ? $searchCondition["TeacherSearch"]["political_landscape"] : '',
+            "TeacherSearch[title]"=>isset($searchCondition["TeacherSearch"]["title"]) ? $searchCondition["TeacherSearch"]["title"] : '',
+            "TeacherSearch[diploma]"=>isset($searchCondition["TeacherSearch"]["diploma"]) ? $searchCondition["TeacherSearch"]["diploma"] : '',
+            "TeacherSearch[isExport]"=>'1',
         ], ['class' => 'btn btn-info']) ?>
         <?= Html::a('模板下载', ['download'], ['class' => 'btn btn-warning']) ?>
     </p>
@@ -46,17 +46,78 @@ $this->params['breadcrumbs'][] = $this->title;
             'lastPageLabel'=>'尾页',
         ],
         'columns' => [
-            'teacher_id',
-            'name',
-            'sex',
-            'born_time',
-            'grade',
-            'banji',
-            'duty',
-            'diploma',
-            'political_landscape',
-            'title',
-
+            [
+                'attribute' => 'teacher_id',
+                'value' => 'teacher_id',
+                'headerOptions' => ['width' => '130'],
+            ],
+            [
+                'attribute' => 'name',
+                'value' => 'name',
+                'headerOptions' => ['width' => '130'],
+            ],
+            [
+                'attribute' => 'sex',
+                'label' => '性别',
+                'value' => function($dataProvider){
+                    return $dataProvider->sex == 1 ? '男' : '女';
+                },
+                'filter' => array('1' => '男' ,'2' => '女'),
+            ],
+            [
+                'attribute' => 'grade',
+                'label' => '年级',
+                'value' => 'grade0.name',
+                'filter' => \frontend\models\Grade::find()
+                    ->select('name,the')
+                    ->indexBy('the')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'banji',
+                'label' => '班级',
+                'value' => 'class0.name',
+                'filter' => \frontend\models\Class0::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'duty',
+                'label' => '职务',
+                'value' => 'duty0.name',
+                'filter' => \frontend\models\Duty::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'diploma',
+                'label' => '学历',
+                'value' => 'diploma0.name',
+                'filter' => \frontend\models\Diploma::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'political_landscape',
+                'label' => '政治面貌',
+                'value' => 'political0.name',
+                'filter' => \frontend\models\Political::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
+            [
+                'attribute' => 'title',
+                'label' => '职称',
+                'value' => 'title0.name',
+                'filter' => \frontend\models\Title::find()
+                    ->select('name,id')
+                    ->indexBy('id')
+                    ->column(),
+            ],
             [
                     'class' => 'yii\grid\ActionColumn',
                     'template' => '{view}{update}{delete}',

@@ -2,11 +2,13 @@
 
 namespace frontend\controllers;
 
+use ciniran\excel\SaveExcel;
 use frontend\models\FileImportForm;
 use frontend\models\Student;
 use Yii;
 use frontend\models\Teacher;
 use frontend\models\TeacherSearch;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -41,9 +43,33 @@ class TeacherController extends Controller
         $searchModel = new TeacherSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        //导出功能
+        $searchCondition = Yii::$app->request->queryParams; //获得搜索参数
+
+        if (isset($searchCondition["TeacherSearch"]["isExport"]) && $searchCondition["TeacherSearch"]["isExport"] == 1){
+            //导出不适应分页，把默认的20条改的很大
+            $dataProvider->setPagination(new Pagination([
+                'defaultPageSize' => 1000000,
+                'pageSizeLimit' => [1, 1000000]
+            ]));
+
+            $models = $dataProvider->getModels();
+
+            $searchModel->dealExportData($models); //处理模型数据
+
+            $excel = new SaveExcel([
+
+                'models' => $models,
+
+                'fields' => ['name','teacher_id','sex','born_time','grade','banji','duty','diploma','political_landscape','tel', 'qq', 'email', 'title'], //限制输出的列
+            ]);
+
+            $excel->modelsToExcel();
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'searchCondition' => $searchCondition,
         ]);
     }
 
@@ -149,22 +175,43 @@ class TeacherController extends Controller
                 $fileName = $uploadRoot.$file;
                 //保存文件
                 $model->uploader->saveAs($fileName,false);
-                $stuentModel = new Student();
-                $dataModel = $stuentModel->importData($fileName);
+                $teacherModel = new Teacher();
+                $dataModel = $teacherModel->importData($fileName);
 
                 foreach ($dataModel as $item){
-                    $_model = clone $stuentModel; //克隆对象
-                    if ($_model->load($item) && $_model->save()){
+                    if ($item['Teacher']['name'] == null){
+                        continue;
+                    }
+                    $_model = clone $teacherModel; //克隆对象
+                    if ($_model->load($item) && $_model->save(false)){
                         continue;
                     }else{
-                        \Yii::$app->session->setFlash('success','导入失败');
+                        \Yii::$app->session->setFlash('warning','导入失败');
+                        return $this->render('import',['model'=>$model]);
                     }
                 }
                 \Yii::$app->session->setFlash('success','导入成功');
-                return $this->redirect(array('/student/index'));
+                return $this->redirect(array('/teacher/index'));
             }
         }
 
         return $this->render('import',['model'=>$model]);
+    }
+
+    //模板下载
+    public function actionDownload(){
+        $file = \Yii::getAlias('@frontendDownload').'/excel'.'/'.'教师信息表.xlsx';
+        if (!file_exists($file)){
+            Yii::$app->session->setFlash('warning','文件不存在');
+            return $this->redirect(array('/student/index'));
+        }else{
+            $wrstr = htmlspecialchars_decode(file_get_contents($file));
+            $outfile='教师信息表.xlsx';
+            header('Content-type: application/octet-stream; charset=utf8');
+            Header("Accept-Ranges: bytes");
+            header('Content-Disposition: attachment; filename='.$outfile);
+            echo $wrstr;
+            exit();
+        }
     }
 }

@@ -179,6 +179,9 @@ class StudentController extends Controller
                 $dataModel = $stuentModel->importData($fileName);
 
                 foreach ($dataModel as $item){
+                    if ($item['Student']['name'] == null){
+                        continue;
+                    }
                     $_model = clone $stuentModel; //克隆对象
                     if ($_model->load($item) && $_model->save()){
                        continue;

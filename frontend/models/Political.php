@@ -49,4 +49,22 @@ class Political extends \yii\db\ActiveRecord
             'update_time' => '最后修改时间',
         ];
     }
+
+    public function beforeSave($insert)
+    {
+
+        if(parent::beforeSave($insert)){
+            if($insert){
+                $type = Yii::$app->request->get();
+                $this->type = $type['type'];
+                $this->insert_time = date('Y-m-d H:i:s',time());
+                $this->update_time = date('Y-m-d H:i:s',time());
+            }else{
+                $this->update_time = date('Y-m-d H:i:s',time());
+            }
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

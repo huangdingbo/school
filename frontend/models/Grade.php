@@ -49,4 +49,20 @@ class Grade extends \yii\db\ActiveRecord
             'updata_time' => '最后修改时间',
         ];
     }
+
+    public function beforeSave($insert)
+    {
+
+        if(parent::beforeSave($insert)){
+            if($insert){
+                $this->insert_time = date('Y-m-d H:i:s',time());
+                $this->updata_time = date('Y-m-d H:i:s',time());
+            }else{
+                $this->updata_time = date('Y-m-d H:i:s',time());
+            }
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

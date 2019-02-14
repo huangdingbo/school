@@ -81,4 +81,19 @@ class TeacherSearch extends Teacher
 
         return $dataProvider;
     }
+
+    public function dealExportData($models){
+
+        foreach ($models as &$item){
+            $item->sex = $item->sex == 1 ? '男' : '女';
+            $item->grade = $item->grade.'届';
+            $item->banji = (Class0::find()->select('name')->where(['id'=>$item->banji])->one())->name;
+            $item->duty = (Duty::find()->select('name')->where(['id'=>$item->duty,'type'=>'2'])->one())->name;
+            $item->political_landscape = (Political::find()->select('name')->where(['id'=>$item->political_landscape,'type'=>'2'])->one())->name;
+            $item->title = (Title::find()->select('name')->where(['id'=>$item->title])->one())->name;
+            $item->diploma = (Diploma::find()->select('name')->where(['id'=>$item->diploma])->one())->name;
+
+        }
+        return $models;
+    }
 }

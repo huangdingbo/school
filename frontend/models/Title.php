@@ -40,9 +40,25 @@ class Title extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'insert_time' => 'Insert Time',
-            'update_time' => 'Update Time',
+            'name' => '学历名',
+            'insert_time' => '插入时间',
+            'update_time' => '最后更新时间',
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+
+        if(parent::beforeSave($insert)){
+            if($insert){
+                $this->insert_time = date('Y-m-d H:i:s',time());
+                $this->update_time = date('Y-m-d H:i:s',time());
+            }else{
+                $this->update_time = date('Y-m-d H:i:s',time());
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
 }

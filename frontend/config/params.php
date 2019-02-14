@@ -1,5 +1,6 @@
 <?php
 return [
+    'defaultImg' =>'/uploads/images/warning1.png',
     'adminEmail' => 'admin@example.com',
     'appName' => '智慧校园Demo',
     'version' => 'demo-1.0',
