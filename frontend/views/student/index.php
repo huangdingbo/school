@@ -39,9 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-//        'rowOptions' => function($model, $key, $index, $grid) {
-//            return ['class' => $index % 2 ==0 ? 'label-red' : 'label-green'];
-//        },
         'layout'=> '{items}<div class="text-left tooltip-demo">{pager}</div>',
         'pager'=>[
             //'options'=>['class'=>'hidden']//关闭分页
@@ -51,8 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'lastPageLabel'=>'尾页',
         ],
         'columns' => [
-//            ['class' => 'yii\grid\SerialColumn'],
-
             [
                 'attribute' => 'student_id',
                 'value' => 'student_id',
@@ -68,17 +63,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => 'name',
                 'headerOptions' => ['width' => '130'],
             ],
-//            'sex',
-        [
-            'attribute' => 'sex',
-            'label' => '性别',
-            'value' => function($dataProvider){
-                return $dataProvider->sex == 1 ? '男' : '女';
-            },
-            'filter' => array('1' => '男' ,'2' => '女'),
-//            'headerOptions' => ['width' => '80'],
-        ],
-            //'born_time',
+            [
+                'attribute' => 'sex',
+                'label' => '性别',
+                'value' => function($dataProvider){
+                    return $dataProvider->sex == 1 ? '男' : '女';
+                },
+                'filter' => array('1' => '男' ,'2' => '女'),
+            ],
             [
                 'attribute' => 'grade',
                 'label' => '年级',
@@ -87,7 +79,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->select('name,the')
                     ->indexBy('the')
                     ->column(),
-//                'headerOptions' => ['width' => '100'],
             ],
             [
                 'attribute' => 'banji',
@@ -97,7 +88,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->select('name,id')
                     ->indexBy('id')
                     ->column(),
-//                'headerOptions' => ['width' => '100'],
             ],
             [
                 'attribute' => 'duty',
@@ -107,10 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->select('name,id')
                     ->indexBy('id')
                     ->column(),
-//                'headerOptions' => ['width' => '120'],
             ],
-            //'home_address',
-            //'admission_time',
             [
                 'attribute' => 'political_landscape',
                 'label' => '政治面貌',
@@ -119,10 +106,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->select('name,id')
                     ->indexBy('id')
                     ->column(),
-//                'headerOptions' => ['width' => '100'],
             ],
-            //'pic',
-//            'type',
             [
                 'attribute' => 'type',
                 'label' => '类型',
@@ -130,12 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $dataProvider->type == 1 ? '理科' : '文科';
                 },
                 'filter' => array('1' => '理科' ,'0' => '文科'),
-//                'headerOptions' => ['width' => '100'],
             ],
-            //'grade_class',
-            //'insert_time',
-            //'update_time',
-
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view}{update}{delete}',
@@ -169,7 +148,7 @@ $this->params['breadcrumbs'][] = $this->title;
     // 更新操作
     Modal::begin([
         'id' => 'update-modal',
-        'header' => '<h4 class="modal-title">修改</h4>',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">修改</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
     ]);
     Modal::end();
@@ -191,7 +170,7 @@ JS;
     // 查看操作
     Modal::begin([
         'id' => 'view-modal',
-        'header' => '<h4 class="modal-title">查看</h4>',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">查看</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
     ]);
     Modal::end();

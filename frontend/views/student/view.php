@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="student-view">
 
-    <h1><?= Html::img($model->pic,['height'=>'100','width'=>'120']) ?></h1>
+    <h1><?= Html::img($model->pic,['height'=>'120','width'=>'150']) ?></h1>
 
 
     <?= DetailView::widget([

@@ -91,6 +91,7 @@
                     [
                         'label' => '档案管理模块',
                         'icon' => 'share',
+                        'class'=>'fa-clipboard',
                         'url' => '#',
                         'items' => [
                             [
@@ -98,14 +99,14 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['student/index']),],
                                     [
-                                        'label' => '其他待配置',
+                                        'label' => '学生数据表配置',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
-                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['duty/index','type' => '1']),],
+                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['political/index','type' => '1']),],
                                         ],
                                     ],
                                 ],
@@ -115,18 +116,43 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '教师基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['teacher/index']),],
                                     [
-                                        'label' => '其他待配置',
+                                        'label' => '教师数据表配置',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
-                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '学历表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['diploma/index']),],
+                                            ['label' => '职称表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['title/index']),],
+                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['duty/index','type' => '2']),],
+                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['political/index','type' => '2']),],
                                         ],
                                     ],
                                 ],
                             ],
+                            [
+                                'label' => '班级档案管理',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '班级基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['class-message/index']),],
+                                    [
+                                        'label' => '班级表配置',
+                                        'icon' => 'circle-o',
+                                        'url' => \yii\helpers\Url::to(['class0/index']),
+                                    ],
+                                ],
+                            ],
+                            [
+                                'label' => '其他数据表配置',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '年级表配置', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['grade/index']),],
+                                ],
+                            ],
+
+
                         ],
                     ],
                     /*教学管理模块*/
