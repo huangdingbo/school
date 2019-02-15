@@ -7,6 +7,7 @@ use frontend\models\FileImportForm;
 use Yii;
 use frontend\models\Student;
 use frontend\models\StudentSearch;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -45,6 +46,11 @@ class StudentController extends Controller
         $searchCondition = Yii::$app->request->queryParams; //获得搜索参数
 
         if (isset($searchCondition["StudentSearch"]["isExport"]) && $searchCondition["StudentSearch"]["isExport"] == 1){
+            //导出不适应分页，把默认的20条改的很大
+            $dataProvider->setPagination(new Pagination([
+                'defaultPageSize' => 1000000,
+                'pageSizeLimit' => [1, 1000000]
+            ]));
 
             $models = $dataProvider->getModels();
 
@@ -88,7 +94,7 @@ class StudentController extends Controller
     {
         $data = Yii::$app->request->post();
         $model = new Student();
-        $data = isset($data['Student']['pic']) ? $model->dealData($data) : $data;
+        $data = isset($data['Student']['pic']) ? Student::dealPicData($data) : $data;
         if ($model->load($data) && $model->save(false)) {
             return $this->redirect(['student/index']);
         }
@@ -109,7 +115,7 @@ class StudentController extends Controller
     {
         $model = $this->findModel($id);
         $data = Yii::$app->request->post();
-        $data = isset($data['Student']['pic']) ? $model->dealData($data) : $data;
+        $data = isset($data['Student']['pic']) ? Student::dealPicData($data) : $data;
         if ($model->load($data) && $model->save()) {
             return $this->redirect(['index']);
         }
@@ -146,7 +152,7 @@ class StudentController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('请求的页面不存在。');
     }
 
     public function actionImport(){
@@ -173,6 +179,9 @@ class StudentController extends Controller
                 $dataModel = $stuentModel->importData($fileName);
 
                 foreach ($dataModel as $item){
+                    if ($item['Student']['name'] == null){
+                        continue;
+                    }
                     $_model = clone $stuentModel; //克隆对象
                     if ($_model->load($item) && $_model->save()){
                        continue;

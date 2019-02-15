@@ -79,13 +79,18 @@ class Student extends \yii\db\ActiveRecord
         ];
     }
 
-    public function dealData(&$data){
-        if (preg_match('/^http:\/\/ossweb/i',$data['Student']['pic'])){
+    public static function dealPicData(&$data,$filed='Student'){
+        if (preg_match('/^http:\/\/ossweb/i',$data[$filed]['pic'])){
             return $data;
-        }elseif (!$data['Student']['pic']){
-            $data['Student']['pic'] = \Yii::$app->params['domain'].Yii::$app->params['defaultImg'];
-        }else{
-            $data['Student']['pic'] = \Yii::$app->params['domain'].$data['Student']['pic'];
+        }elseif (!$data[$filed]['pic']){
+            $data[$filed]['pic'] = \Yii::$app->params['domain'].Yii::$app->params['defaultImg'];
+        }elseif (preg_match('/^http:\/\/huangdingbo.work/i',$data[$filed]['pic'])){
+            return $data;
+        }elseif (preg_match('/^\/\/game.gtimg.cn/i',$data[$filed]['pic'])){
+            return $data;
+        }
+        else{
+            $data[$filed]['pic'] = \Yii::$app->params['domain'].$data[$filed]['pic'];
         }
         return $data;
     }
