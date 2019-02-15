@@ -23,8 +23,6 @@ $this->params['breadcrumbs'][] = $this->title;
             "TeacherSearch[teacher_id]"=>isset($searchCondition["TeacherSearch"]["teacher_id"]) ? $searchCondition["TeacherSearch"]["teacher_id"] : '',
             "TeacherSearch[name]"=>isset($searchCondition["TeacherSearch"]["name"]) ? $searchCondition["TeacherSearch"]["name"] : '',
             "TeacherSearch[sex]"=>isset($searchCondition["TeacherSearch"]["sex"]) ? $searchCondition["TeacherSearch"]["sex"] : '',
-            "TeacherSearch[grade]"=>isset($searchCondition["TeacherSearch"]["grade"]) ? $searchCondition["TeacherSearch"]["grade"] : '',
-            "TeacherSearch[banji]"=>isset($searchCondition["TeacherSearch"]["banji"]) ? $searchCondition["TeacherSearch"]["banji"] : '',
             "TeacherSearch[duty]"=>isset($searchCondition["TeacherSearch"]["duty"]) ? $searchCondition["TeacherSearch"]["duty"] : '',
             "TeacherSearch[political_landscape]"=>isset($searchCondition["TeacherSearch"]["political_landscape"]) ? $searchCondition["TeacherSearch"]["political_landscape"] : '',
             "TeacherSearch[title]"=>isset($searchCondition["TeacherSearch"]["title"]) ? $searchCondition["TeacherSearch"]["title"] : '',
@@ -65,24 +63,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => array('1' => '男' ,'2' => '女'),
             ],
             [
-                'attribute' => 'grade',
-                'label' => '年级',
-                'value' => 'grade0.name',
-                'filter' => \frontend\models\Grade::find()
-                    ->select('name,the')
-                    ->indexBy('the')
-                    ->column(),
-            ],
-            [
-                'attribute' => 'banji',
-                'label' => '班级',
-                'value' => 'class0.name',
-                'filter' => \frontend\models\Class0::find()
-                    ->select('name,id')
-                    ->indexBy('id')
-                    ->column(),
-            ],
-            [
                 'attribute' => 'duty',
                 'label' => '职务',
                 'value' => 'duty0.name',
@@ -118,6 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->indexBy('id')
                     ->column(),
             ],
+           'tel',
             [
                     'class' => 'yii\grid\ActionColumn',
                     'template' => '{view}{update}{delete}',

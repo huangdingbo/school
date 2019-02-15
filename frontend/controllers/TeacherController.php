@@ -61,7 +61,7 @@ class TeacherController extends Controller
 
                 'models' => $models,
 
-                'fields' => ['name','teacher_id','sex','born_time','grade','banji','duty','diploma','political_landscape','tel', 'qq', 'email', 'title'], //限制输出的列
+                'fields' => ['name','teacher_id','sex','born_time','duty','diploma','political_landscape','tel', 'qq', 'email', 'title'], //限制输出的列
             ]);
 
             $excel->modelsToExcel();

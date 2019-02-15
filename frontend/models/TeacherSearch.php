@@ -17,8 +17,8 @@ class TeacherSearch extends Teacher
     public function rules()
     {
         return [
-            [['id', 'sex', 'banji', 'duty', 'diploma', 'political_landscape', 'title'], 'integer'],
-            [['teacher_id', 'name', 'born_time', 'grade', 'tel', 'qq', 'email', 'pic', 'grade_calss', 'insert_time', 'update_time'], 'safe'],
+            [['id', 'sex', 'duty', 'diploma', 'political_landscape', 'title'], 'integer'],
+            [['teacher_id', 'name', 'born_time', 'tel', 'qq', 'email', 'pic', 'insert_time', 'update_time'], 'safe'],
         ];
     }
 
@@ -60,7 +60,6 @@ class TeacherSearch extends Teacher
         $query->andFilterWhere([
             'id' => $this->id,
             'sex' => $this->sex,
-            'banji' => $this->banji,
             'duty' => $this->duty,
             'diploma' => $this->diploma,
             'political_landscape' => $this->political_landscape,
@@ -70,12 +69,10 @@ class TeacherSearch extends Teacher
         $query->andFilterWhere(['like', 'teacher_id', $this->teacher_id])
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'born_time', $this->born_time])
-            ->andFilterWhere(['like', 'grade', $this->grade])
             ->andFilterWhere(['like', 'tel', $this->tel])
             ->andFilterWhere(['like', 'qq', $this->qq])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'pic', $this->pic])
-            ->andFilterWhere(['like', 'grade_calss', $this->grade_calss])
             ->andFilterWhere(['like', 'insert_time', $this->insert_time])
             ->andFilterWhere(['like', 'update_time', $this->update_time]);
 
@@ -86,8 +83,6 @@ class TeacherSearch extends Teacher
 
         foreach ($models as &$item){
             $item->sex = $item->sex == 1 ? '男' : '女';
-            $item->grade = $item->grade.'届';
-            $item->banji = (Class0::find()->select('name')->where(['id'=>$item->banji])->one())->name;
             $item->duty = (Duty::find()->select('name')->where(['id'=>$item->duty,'type'=>'2'])->one())->name;
             $item->political_landscape = (Political::find()->select('name')->where(['id'=>$item->political_landscape,'type'=>'2'])->one())->name;
             $item->title = (Title::find()->select('name')->where(['id'=>$item->title])->one())->name;

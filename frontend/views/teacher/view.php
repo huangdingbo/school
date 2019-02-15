@@ -29,16 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'born_time',
             [
-                'attribute' => 'grade',
-                'label' => '年级',
-                'value'=>$model->grade0->name,
-            ],
-            [
-                'attribute' => 'banji',
-                'label' => '班级',
-                'value'=>$model->class0->name,
-            ],
-            [
                 'attribute' => 'duty',
                 'label' => '职务',
                 'value'=>$model->duty0->name,

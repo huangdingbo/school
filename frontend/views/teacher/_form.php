@@ -32,21 +32,6 @@ use kartik\date\DatePicker;
         ]
     ]); ?>
 
-    <?=$form->field($model,'grade')
-        ->dropDownList(\frontend\models\Grade::find()
-            ->select('the,the')
-            ->indexBy('the')
-            ->orderBy('the ASC')
-            ->column(),['prompt'=>'请选择年级']);
-    ?>
-
-    <?=$form->field($model,'banji')
-        ->dropDownList(\frontend\models\Class0::find()
-            ->select('name,id')
-            ->indexBy('id')
-            ->column(),['prompt'=>'请选择班级']);
-    ?>
-
     <?=$form->field($model,'duty')
         ->dropDownList(\frontend\models\Duty::find()
             ->select('name,id')
