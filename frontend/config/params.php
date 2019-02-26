@@ -28,4 +28,16 @@ return [
     ],
     'imageUploadRelativePath' => '../uploads/images/', // 图片默认上传的目录
     'imageUploadSuccessPath' => '/uploads/images/', // 图片上传成功后，路径前缀
+    'groupConfig' => [
+        1 => '语文组',
+        2 => '数学组',
+        3 => '外语组',
+        4 => '物理组',
+        5 => '化学组',
+        6 => '生物组',
+        7 => '政治组',
+        8 => '历史组',
+        9 => '地理组',
+    ],
+    'sql' => '',
 ];

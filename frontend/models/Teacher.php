@@ -12,6 +12,7 @@ use Yii;
  * @property string $teacher_id 教师编号
  * @property string $name 姓名
  * @property int $sex 性别
+ * @property int $group 所在分组（1语2数3外4物5化6生7政8史9地）
  * @property string $born_time 出生年月
  * @property int $duty 职务
  * @property int $diploma 学历
@@ -40,8 +41,8 @@ class Teacher extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['teacher_id', 'name', 'sex', 'born_time','duty', 'diploma', 'political_landscape', 'tel', 'qq', 'email', 'title', 'insert_time', 'update_time'], 'required'],
-            [['sex', 'duty', 'diploma', 'political_landscape', 'title'], 'integer'],
+            [['teacher_id', 'name', 'sex', 'born_time','duty', 'diploma', 'political_landscape', 'tel', 'qq', 'email', 'title','group', 'insert_time', 'update_time'], 'required'],
+            [['sex', 'duty', 'diploma', 'political_landscape', 'title','group'], 'integer'],
             [['teacher_id', 'name', 'born_time', 'insert_time', 'update_time'], 'string', 'max' => 20],
             [['tel', 'qq'], 'string', 'max' => 11],
             [['email'], 'string', 'max' => 50],
@@ -63,6 +64,7 @@ class Teacher extends \yii\db\ActiveRecord
             'duty' => '职务',
             'diploma' => '学历',
             'political_landscape' => '政治面貌',
+            'group' => '所在分组',
             'tel' => '电话',
             'qq' => 'QQ',
             'email' => '邮箱',
@@ -98,6 +100,7 @@ class Teacher extends \yii\db\ActiveRecord
             'useLabel' => true,
         ]);
         $dataModel = $excel->getModels();
+
         $arr = array();
         foreach ($dataModel as $key =>$item){
             $arr[$key]['Teacher']['name'] = $item->name;
@@ -108,6 +111,7 @@ class Teacher extends \yii\db\ActiveRecord
             $arr[$key]['Teacher']['diploma'] = $item->diploma;
             $arr[$key]['Teacher']['tel'] = $item->tel;
             $arr[$key]['Teacher']['political_landscape'] = $item->political_landscape;
+            $arr[$key]['Teacher']['group'] = $item->group;
             $arr[$key]['Teacher']['qq'] = $item->qq;
             $arr[$key]['Teacher']['pic'] = Yii::$app->params['domain'].Yii::$app->params['defaultImg'];
             $arr[$key]['Teacher']['email'] = $item->email;

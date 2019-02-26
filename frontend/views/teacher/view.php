@@ -48,6 +48,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => '职称',
                 'value'=>$model->title0->name,
             ],
+            [
+                'attribute' => 'group',
+                'label' => '所在分组',
+                'value'=>function($model){
+                    return Yii::$app->params['groupConfig'][$model->group];
+                },
+            ],
             'tel',
             'qq',
             'email:email',

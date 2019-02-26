@@ -3,8 +3,14 @@
 namespace frontend\controllers;
 
 use ciniran\excel\SaveExcel;
+use frontend\components\DealData;
+use frontend\models\Diploma;
+use frontend\models\Duty;
 use frontend\models\FileImportForm;
+use frontend\models\Political;
 use frontend\models\Student;
+use frontend\models\Title;
+use QL\Dom\Query;
 use Yii;
 use frontend\models\Teacher;
 use frontend\models\TeacherSearch;
@@ -47,30 +53,23 @@ class TeacherController extends Controller
         $searchCondition = Yii::$app->request->queryParams; //获得搜索参数
 
         if (isset($searchCondition["TeacherSearch"]["isExport"]) && $searchCondition["TeacherSearch"]["isExport"] == 1){
-            //导出不适应分页，把默认的20条改的很大
-            $dataProvider->setPagination(new Pagination([
-                'defaultPageSize' => 1000000,
-                'pageSizeLimit' => [1, 1000000]
-            ]));
 
-            $models = $dataProvider->getModels();
+            $data = Yii::$app->db->createCommand(Yii::$app->params['sql'])->queryAll();
 
-            $searchModel->dealExportData($models); //处理模型数据
+            $searchModel->dealExportData($data); //处理数据
 
             $excel = new SaveExcel([
-
-                'models' => $models,
-
-                'fields' => ['name','teacher_id','sex','born_time','duty','diploma','political_landscape','tel', 'qq', 'email', 'title'], //限制输出的列
+                'array' => $data,
+                'headerDataArray' => ['教师编号','姓名','性别','出生日期','职务','学历','政治面貌','所在分组','电话号码','QQ','邮箱','职称'],
+            ]);
+            $excel->arrayToExcel();
+        }
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+                'searchCondition' => $searchCondition,
             ]);
 
-            $excel->modelsToExcel();
-        }
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-            'searchCondition' => $searchCondition,
-        ]);
     }
 
     /**

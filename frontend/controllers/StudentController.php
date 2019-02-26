@@ -56,6 +56,7 @@ class StudentController extends Controller
 
             $searchModel->dealExportData($models); //处理模型数据
 
+
             $excel = new SaveExcel([
 
                 'models' => $models,

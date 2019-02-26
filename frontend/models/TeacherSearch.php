@@ -17,7 +17,7 @@ class TeacherSearch extends Teacher
     public function rules()
     {
         return [
-            [['id', 'sex', 'duty', 'diploma', 'political_landscape', 'title'], 'integer'],
+            [['id', 'sex', 'duty', 'diploma', 'political_landscape', 'title','group'], 'integer'],
             [['teacher_id', 'name', 'born_time', 'tel', 'qq', 'email', 'pic', 'insert_time', 'update_time'], 'safe'],
         ];
     }
@@ -62,6 +62,7 @@ class TeacherSearch extends Teacher
             'sex' => $this->sex,
             'duty' => $this->duty,
             'diploma' => $this->diploma,
+            'group' => $this->group,
             'political_landscape' => $this->political_landscape,
             'title' => $this->title,
         ]);
@@ -76,19 +77,25 @@ class TeacherSearch extends Teacher
             ->andFilterWhere(['like', 'insert_time', $this->insert_time])
             ->andFilterWhere(['like', 'update_time', $this->update_time]);
 
+        \Yii::$app->params['sql'] = $query ->createCommand()->getRawSql();;
+
         return $dataProvider;
     }
 
-    public function dealExportData($models){
+    public function dealExportData(&$data){
 
-        foreach ($models as &$item){
-            $item->sex = $item->sex == 1 ? '男' : '女';
-            $item->duty = (Duty::find()->select('name')->where(['id'=>$item->duty,'type'=>'2'])->one())->name;
-            $item->political_landscape = (Political::find()->select('name')->where(['id'=>$item->political_landscape,'type'=>'2'])->one())->name;
-            $item->title = (Title::find()->select('name')->where(['id'=>$item->title])->one())->name;
-            $item->diploma = (Diploma::find()->select('name')->where(['id'=>$item->diploma])->one())->name;
-
+        foreach ($data as &$item){
+            $item['sex'] = $item['sex'] == 1 ? '男' : '女';
+            $item['duty'] = (Duty::find()->select('name')->where(['id'=>$item['duty'],'type'=>'2'])->one())->name;
+            $item['political_landscape'] = (Political::find()->select('name')->where(['id'=>$item['political_landscape']])->one())->name;
+            $item['title'] = (Title::find()->select('name')->where(['id'=> $item['title']])->one())->name;
+            $item['diploma'] = (Diploma::find()->select('name')->where(['id'=> $item['diploma']])->one())->name;
+            $item['group'] = \Yii::$app->params['groupConfig'][ $item['group']];
+            unset($item['id']);
+            unset($item['pic']);
+            unset($item['insert_time']);
+            unset($item['update_time']);
         }
-        return $models;
+        return $data;
     }
 }

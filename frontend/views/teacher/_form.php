@@ -68,6 +68,10 @@ use kartik\date\DatePicker;
             ->column(),['prompt'=>'请选择教师职称']);
     ?>
 
+    <?=$form->field($model,'group')
+        ->dropDownList(Yii::$app->params['groupConfig'],['prompt'=>'请选择教师所在分组']);
+    ?>
+
     <?=$form->field($model, 'pic')->widget('manks\FileInput', []); ?>
 
     <div class="form-group">

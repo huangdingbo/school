@@ -2,18 +2,21 @@
 
 namespace frontend\controllers;
 
+use frontend\models\GradeClass;
+use frontend\models\GradeClassSearch;
 use Yii;
-use frontend\models\Test;
-use frontend\models\TestSearch;
+use frontend\models\Course;
+use frontend\models\CourseSearch;
+use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TestController implements the CRUD actions for Test model.
+ * CourseController implements the CRUD actions for Course model.
  */
-class TestController extends Controller
+class CourseController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +34,12 @@ class TestController extends Controller
     }
 
     /**
-     * Lists all Test models.
+     * Lists all Course models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TestSearch();
+        $searchModel = new CourseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +49,7 @@ class TestController extends Controller
     }
 
     /**
-     * Displays a single Test model.
+     * Displays a single Course model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,25 +62,42 @@ class TestController extends Controller
     }
 
     /**
-     * Creates a new Test model.
+     * Creates a new Course model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Test();
+        $model = new Course();
+        $postData = Yii::$app->request->post();
+        $grade = $postData['grade'];
+        $banji = $postData['banji'];
+        unset($postData['grade']);
+        unset($postData['banji']);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        Course::deleteAll(['grade'=>$grade,'banji'=>$banji]);
+
+        foreach ($postData as $key => $item){
+            $data = $model->getData($item,$key,$grade,$banji);
+            $newmodel = clone $model;
+
+            if ($newmodel->load($data) && $newmodel->save(false)) {
+                continue;
+            }else{
+                throw new ForbiddenHttpException('插入或更新失败');
+            }
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        $status = GradeClass::find()->where(['grade'=>$grade,'banji' => $banji])->one();
+        $status->status = 1;
+        $status->save();
+
+
+        return $this->redirect(['grade-class/index']);
     }
 
     /**
-     * Updates an existing Test model.
+     * Updates an existing Course model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,13 +111,13 @@ class TestController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->renderAjax('update', [
+        return $this->render('update', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Deletes an existing Test model.
+     * Deletes an existing Course model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,50 +131,35 @@ class TestController extends Controller
     }
 
     /**
-     * Finds the Test model based on its primary key value.
+     * Finds the Course model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Test the loaded model
+     * @return Course the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Test::findOne($id)) !== null) {
+        if (($model = Course::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionCandidate($id){
-        echo '生成考号';exit;
 
-//        $model = new Ttest();
-//
-//        $list = $model -> makeCandidate($id);
-//
-//
-//        if($list){
-//
-//            $searchModel = new TkaohaoSearch();
-//            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//            return $this->render('/tkaohao/index',[
-//                'searchModel' => $searchModel,
-//                'dataProvider' => $dataProvider,
-//            ]);
-//        }else{
-//            return $this->actionIndex();
-//        }
+    public function beforeAction($action) {
 
-    }
+        $currentaction = $action->id;
 
-    public function actionAudit($id){
-        $model = Test::find()->where(['id' => $id])->one();
-        $model->status = 2;
-        if (!$model->save()){
-            throw new ForbiddenHttpException('操作失败，原因未知');
+        $novalidactions = ['create'];
+
+        if(in_array($currentaction,$novalidactions)) {
+
+            $action->controller->enableCsrfValidation = false;
         }
-       return $this->redirect(['index']);
+        parent::beforeAction($action);
+
+        return true;
     }
 
 }

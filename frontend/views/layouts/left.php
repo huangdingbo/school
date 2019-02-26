@@ -168,8 +168,9 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '查看课表', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '课程管理', 'icon' => 'circle-o', 'url' => '#',],
                                     ['label' => '排课', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '查看课表', 'icon' => 'circle-o', 'url' => '#',],
                                     [
                                         'label' => '其他待配置',
                                         'icon' => 'circle-o',

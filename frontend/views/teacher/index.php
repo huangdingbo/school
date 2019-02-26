@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'layout'=> '{items}<div class="text-left tooltip-demo">{pager}</div>',
         'pager'=>[
             //'options'=>['class'=>'hidden']//关闭分页
             'firstPageLabel'=>"首页",
@@ -98,6 +97,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     ->indexBy('id')
                     ->column(),
             ],
+            [
+                'attribute' => 'group',
+                'label' => '所在分组',
+                'value' => function($dataProvider){
+                    return Yii::$app->params['groupConfig'][$dataProvider->group];
+                },
+                'filter' => Yii::$app->params['groupConfig'],
+            ],
            'tel',
             [
                     'class' => 'yii\grid\ActionColumn',
@@ -134,6 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'id' => 'update-modal',
         'header' => '<h4 class="modal-title" style="color: #0d6aad">修改</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
+        'size' => 'modal-lg',
     ]);
     Modal::end();
     $requestUpdateUrl = Url::toRoute('update');
@@ -156,6 +164,7 @@ JS;
         'id' => 'view-modal',
         'header' => '<h4 class="modal-title" style="color: #0d6aad">查看</h4>',
         'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
+        'size' => 'modal-lg',
     ]);
     Modal::end();
     $requestViewUrl = Url::toRoute('view');
