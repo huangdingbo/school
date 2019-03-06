@@ -6,6 +6,7 @@ use Yii;
 use frontend\models\Title;
 use frontend\models\TitleSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -35,6 +36,9 @@ class TitleController extends Controller
      */
     public function actionIndex()
     {
+        if (!Yii::$app->user->can('teacherTable')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $searchModel = new TitleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

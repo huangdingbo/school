@@ -5,6 +5,14 @@ use yii\helpers\Html;
 /* @var $content string */
 ?>
 
+<?php
+$userId = Yii::$app->user->id;
+$userModel = \frontend\models\Adminuser::findOne(['id'=>$userId]);
+$userName = isset($userModel) ? $userModel->username : '';
+$nickName = isset($userModel) ? $userModel->nickname : '';
+$lastLogin = isset($userModel) ? $userModel->last_login : '';
+$pic = isset($userModel) ? $userModel->pic : Yii::$app->request->getHostInfo().'/school/frontend'. Yii::$app->params['defaultImg'];
+?>
 <header class="main-header">
 
     <?= Html::a('<span class="logo-mini">APP</span><span class="logo-lg">' . \Yii::$app->params['appName'] . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
@@ -229,21 +237,21 @@ use yii\helpers\Html;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src="<?= $pic ?>" class="user-image" alt="User Image"/>
+                        <span class="hidden-xs"><?=$userName;?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
-                                 alt="User Image"/>
+                            <img src="<?= $pic?>" class="img-circle" alt="User Image"/>
 
                             <p>
-                                姓名
-                                <small>Member since Nov. 2012</small>
+                                <?=$nickName;?>
+
+                                <small>最后登录于<?=$lastLogin?></small>
                             </p>
                         </li>
-                        <!-- Menu Body -->
+<!--                         Menu Body-->
                         <li class="user-body">
                             <div class="col-xs-4 text-center">
                                 <a href="#">Followers</a>
@@ -258,7 +266,10 @@ use yii\helpers\Html;
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">修改资料</a>
+                                <?php
+                                    $resPwd = \yii\helpers\Url::to(['adminuser/resetpwd','id'=>$userId]);
+                                ?>
+                                <a href=<?=$resPwd;?> class="btn btn-default btn-flat">重置密码</a>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(

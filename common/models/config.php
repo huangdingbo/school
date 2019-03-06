@@ -9,6 +9,10 @@
 namespace common\models;
 
 
+use frontend\models\Class0;
+use frontend\models\Grade;
+use frontend\models\Teacher;
+
 class config
 {
     public static $courseConfig = [
@@ -32,4 +36,42 @@ class config
         '6' => '第六节',
         '7' => '第七节',
     ];
+
+    public static function getLocationMap(){
+        $grade = Grade::find()->select('the')->asArray()->all();
+        $banji = Class0::find()->select('name')->asArray()->all();
+        $arr = array();
+        foreach ($grade as $item){
+            $gradeName = $item['the'].'届';
+            foreach ($banji as $value){
+                $name = $gradeName.$value['name'];
+                $arr[$name] = $name;
+            }
+        }
+        return $arr;
+    }
+
+    public static function getData($indexBy = 'teacher_id'){
+        $data = Teacher::find()
+            ->select('name,group,teacher_id')
+            ->orderBy('group asc')
+            ->asArray()
+            ->all();
+        return  self::dealData($data,$indexBy);
+    }
+
+    private static function dealData($data,$indexBy){
+        $arr = array();
+        foreach($data as $item){
+            $arr[$item[$indexBy]] = config::$courseConfig[$item['group']].'-'.$item['name'];
+        }
+
+        return $arr;
+    }
+
+    public static function dump($data){
+        echo "<pre>";
+        var_dump($data);exit;
+    }
+
 }

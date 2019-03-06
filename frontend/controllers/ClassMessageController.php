@@ -8,6 +8,7 @@ use frontend\models\ClassMessage;
 use frontend\models\ClassMessageSearch;
 use yii\db\Query;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -37,6 +38,9 @@ class ClassMessageController extends Controller
      */
     public function actionIndex()
     {
+        if (!Yii::$app->user->can('indexClassDoc')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $searchModel = new ClassMessageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -54,6 +58,9 @@ class ClassMessageController extends Controller
      */
     public function actionView($id)
     {
+        if (!Yii::$app->user->can('viewClassDoc')){
+            return $this->renderAjax('/site/error',['name'=>'权限验证不通过','message'=>Yii::$app->params['perMessage']]);
+        }
         return $this->renderAjax('/classMessage/view', [
             'model' => $this->findModel($id),
         ]);
@@ -66,6 +73,9 @@ class ClassMessageController extends Controller
      */
     public function actionCreate()
     {
+        if (!Yii::$app->user->can('createClassDoc')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $model = new ClassMessage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save(false)) {
@@ -86,6 +96,9 @@ class ClassMessageController extends Controller
      */
     public function actionUpdate($id)
     {
+        if (!Yii::$app->user->can('updateClassDoc')){
+            return $this->renderAjax('/site/error',['name'=>'权限验证不通过','message'=>Yii::$app->params['perMessage']]);
+        }
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -106,6 +119,9 @@ class ClassMessageController extends Controller
      */
     public function actionDelete($id)
     {
+        if (!Yii::$app->user->can('deleteClassDoc')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -129,6 +145,9 @@ class ClassMessageController extends Controller
 
     //更新班级人数信息
     public function actionUpdateMessage(){
+        if (!Yii::$app->user->can('updateClassNumDoc')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $list  = ClassMessage::find()->select('id,name,grade')->all();
         foreach ($list as $item){
             $num = Student::find()->where(['banji'=>$item->name,'grade'=>$item->grade])

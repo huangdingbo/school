@@ -79,6 +79,7 @@ class GradeClass extends \yii\db\ActiveRecord
     public function getData(){
         $data = Teacher::find()
             ->select('name,group,teacher_id')
+            ->orderBy('group asc')
             ->asArray()
             ->all();
        return  $this->dealData($data);

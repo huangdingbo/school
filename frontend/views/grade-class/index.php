@@ -9,7 +9,7 @@ use yii\helpers\Url;
 /* @var $searchModel frontend\models\GradeClassSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '课程管理';
+$this->title = '课程信息管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="grade-class-index">

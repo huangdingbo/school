@@ -46,6 +46,7 @@ class TeacherSearch extends Teacher
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => ['pageSize' => 15], //设置分页条数
         ]);
 
         $this->load($params);

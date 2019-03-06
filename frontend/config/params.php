@@ -2,11 +2,12 @@
 return [
     'defaultImg' =>'/uploads/images/warning1.png',
     'adminEmail' => 'admin@example.com',
-    'appName' => '智慧校园Demo',
+    'appName' => '智慧校园管理后台',
     'version' => 'demo-1.0',
+    'perMessage' => '对不起，你没有执行该操作的权限，请联系管理员！！！',
     'ICP' => "<a href='http://www.miitbeian.gov.cn'>蜀ICP备18036906号</a>",
     // 图片服务器的域名设置，拼接保存在数据库中的相对地址，可通过web进行展示
-    'domain' => 'http://huangdingbo.work/school/frontend',
+    'domain' => 'c',
     'webuploader' => [
         // 后端处理图片的地址，value 是相对的地址
         'uploadUrl' => 'image/upload',

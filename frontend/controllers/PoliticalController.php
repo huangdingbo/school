@@ -6,6 +6,7 @@ use Yii;
 use frontend\models\Political;
 use frontend\models\PoliticalSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -35,6 +36,16 @@ class PoliticalController extends Controller
      */
     public function actionIndex()
     {
+        //学生档案管理数据表配置权限检查
+        if (Yii::$app->request->queryParams['type'] == 1){
+            if (!Yii::$app->user->can('studentTable')){
+                throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+            }
+        }elseif (Yii::$app->request->queryParams['type'] == 2){
+            if (!Yii::$app->user->can('teacherTable')){
+                throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+            }
+        }
         $searchModel = new PoliticalSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

@@ -53,8 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>$model->political0->name,
             ],
             [
-                'attribute' => 'sex',
-                'label' => '性别',
+                'attribute' => 'type',
+                'label' => '类型',
                 'value'=>function($model){
                     return $model->type == 1 ? '理科' : '文科';
                 }

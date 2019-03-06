@@ -6,6 +6,7 @@ use Yii;
 use frontend\models\Class0;
 use frontend\models\Class0Search;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -35,6 +36,9 @@ class Class0Controller extends Controller
      */
     public function actionIndex()
     {
+        if (!Yii::$app->user->can('classTable')){
+            throw new ForbiddenHttpException(Yii::$app->params['perMessage']);
+        }
         $searchModel = new Class0Search();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

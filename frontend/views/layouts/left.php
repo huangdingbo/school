@@ -1,3 +1,11 @@
+<?php
+$userId = Yii::$app->user->id;
+$userModel = \frontend\models\Adminuser::findOne(['id'=>$userId]);
+$userName = isset($userModel) ? $userModel->username : '';
+$nickName = isset($userModel) ? $userModel->nickname : '';
+$lastLogin = isset($userModel) ? $userModel->last_login : '';
+$pic = isset($userModel) ? $userModel->pic : Yii::$app->request->getHostInfo().'/school/frontend'. Yii::$app->params['defaultImg'];
+?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -5,12 +13,19 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <img src="<?= $pic ?>" class="img-circle" alt="User Image"/>
             </div>
-            <div class="pull-left info">
-                <p>Alexander Pierce</p>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <div class="pull-left info">
+                <p><?= $userName.'('.$nickName.')' ?></p>
+                <?php
+                    if ($userId){
+                        echo "<a href=\"#\"><i class=\"fa fa-circle text-success\"></i> 在线</a>";
+                    }else{
+                        echo "<a href=\"#\"><i class=\"fa fa-circle text-default\"></i> 离线</a>";
+                    }
+                ?>
+
             </div>
         </div>
 
@@ -30,34 +45,17 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => '智慧校园Demo', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    ['label' => Yii::$app->params['appName'], 'options' => ['class' => 'header']],
+//                    ['label' => '系统管理', 'icon' => 'file-code-o', 'url' => ['/gii']],
+//                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+//                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
-                        'label' => 'Some tools',
+                        'label' => '系统管理',
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
+                            ['label' => '管理员', 'icon' => 'file-code-o', 'url' => ['adminuser/index'],],
+                            ['label' => '用户', 'icon' => 'dashboard', 'url' => ['/debug'],],
                         ],
                     ],
                     /*成绩管理模块*/
@@ -66,21 +64,21 @@
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => '学生成绩查询', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => '录入学生成绩', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            ['label' => '学生成绩查询', 'icon' => 'file-code-o', 'url' => ['score/index'],],
+                            ['label' => '录入学生成绩', 'icon' => 'circle', 'url' => ['test/index'],],
                             [
-                                'label' => 'Level One',
+                                'label' => '其他待配置',
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
                                     [
-                                        'label' => 'Level Two',
+                                        'label' => '其他待配置',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
                                         ],
                                     ],
                                 ],
@@ -99,14 +97,14 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['student/index']),],
+                                    ['label' => '学生基本信息管理', 'icon' => 'circle-o', 'url' => ['student/index'],],
                                     [
                                         'label' => '学生数据表配置',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
-                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['duty/index','type' => '1']),],
-                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['political/index','type' => '1']),],
+                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => ['duty/index','type' => '1'],],
+                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => ['political/index','type' => '1'],],
                                         ],
                                     ],
                                 ],
@@ -116,16 +114,17 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '教师基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['teacher/index']),],
+                                    ['label' => '教师基本信息管理', 'icon' => 'circle-o', 'url' => ['teacher/index'],],
                                     [
                                         'label' => '教师数据表配置',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
-                                            ['label' => '学历表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['diploma/index']),],
-                                            ['label' => '职称表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['title/index']),],
-                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['duty/index','type' => '2']),],
-                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['political/index','type' => '2']),],
+                                            ['label' => '学历表', 'icon' => 'circle-o', 'url' => ['diploma/index'],],
+                                            ['label' => '职称表', 'icon' => 'circle-o', 'url' => ['title/index'],],
+                                            ['label' => '职务表', 'icon' => 'circle-o', 'url' => ['duty/index','type' => '2'],],
+                                            ['label' => '政治面貌表', 'icon' => 'circle-o', 'url' => ['political/index','type' => '2'],],
+
                                         ],
                                     ],
                                 ],
@@ -135,11 +134,11 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '班级基本信息管理', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['class-message/index']),],
+                                    ['label' => '班级基本信息管理', 'icon' => 'circle-o', 'url' => ['class-message/index'],],
                                     [
                                         'label' => '班级表配置',
                                         'icon' => 'circle-o',
-                                        'url' => \yii\helpers\Url::to(['class0/index']),
+                                        'url' => ['class0/index'],
                                     ],
                                 ],
                             ],
@@ -148,7 +147,7 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '年级表配置', 'icon' => 'circle-o', 'url' => \yii\helpers\Url::to(['grade/index']),],
+                                    ['label' => '年级表配置', 'icon' => 'circle-o', 'url' => ['grade/index'],],
                                 ],
                             ],
 
@@ -168,9 +167,7 @@
                                 'icon' => 'circle-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => '课程管理', 'icon' => 'circle-o', 'url' => '#',],
-                                    ['label' => '排课', 'icon' => 'circle-o', 'url' => '#',],
-                                    ['label' => '查看课表', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => '课程信息管理', 'icon' => 'circle-o', 'url' => ['grade-class/index'],],
                                     [
                                         'label' => '其他待配置',
                                         'icon' => 'circle-o',
@@ -182,6 +179,27 @@
                                     ],
                                 ],
                             ],
+
+                            [
+                                'label' => '考试管理',
+                                'icon' => 'circle-o',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '考试信息管理', 'icon' => 'circle-o', 'url' => ['test/index'],],
+                                    ['label' => '考场设置', 'icon' => 'circle-o', 'url' => ['room/index'],],
+                                    ['label' => '考号管理', 'icon' => 'circle-o', 'url' => ['kaohao/index'],],
+                                    [
+                                        'label' => '其他待配置',
+                                        'icon' => 'circle-o',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                            ['label' => '其他待配置', 'icon' => 'circle-o', 'url' => '#',],
+                                        ],
+                                    ],
+                                ],
+                            ],
+
                         ],
                     ],
                 ],

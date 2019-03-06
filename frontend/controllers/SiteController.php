@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\AdminLoginForm;
+use frontend\models\Adminuser;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -90,7 +92,7 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        $model = new LoginForm(['scenario' => 'login']);
+        $model = new AdminLoginForm(['scenario' => 'login']);
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
@@ -109,6 +111,11 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
+        $model = Adminuser::findOne(['id' => Yii::$app->user->id]);
+        $model->last_login = date('Y-m-d H:i:s',time());
+        $model->password = '*';
+        $model->save();
+
         Yii::$app->user->logout();
 
         return $this->goHome();
