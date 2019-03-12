@@ -71,7 +71,7 @@ $pic = isset($userModel) ? $userModel->pic : Yii::$app->request->getHostInfo().'
                                 'url' => '#',
                                 'items' => [
                                     ['label' => '我的工作台', 'icon' => 'user', 'url' => ['cases/index'],],
-                                    ['label' => '校园事件概览', 'icon' => 'user', 'url' => ['cases/index'],],
+                                    ['label' => '校园事件概览', 'icon' => 'user', 'url' => ['cases/overview'],],
                                 ],
                             ],
 
