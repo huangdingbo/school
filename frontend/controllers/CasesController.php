@@ -112,6 +112,11 @@ class CasesController extends Controller
      */
     public function actionDelete($id)
     {
+        if (($this->findModel($id))->create_id != Yii::$app->user->id){
+            Yii::$app->session->setFlash('danger','不能删除指派给你的事件！！！');
+            return $this->redirect(['index']);
+        }
+
         $caseNum = ($this->findModel($id))->case_num;
 
         if ($this->findModel($id)->delete()){

@@ -17,6 +17,7 @@ use Yii;
  * @property string $old_point_id 上一次指派人ID
  * @property string $create_id 创建人ID
  * @property string $point_id 指派人ID
+ * @property string $insert_time 插入时间
  * @property int $status 1处理中2已解决3可激活
  */
 class Cases extends \yii\db\ActiveRecord
@@ -44,7 +45,7 @@ class Cases extends \yii\db\ActiveRecord
             [['case_num'], 'string', 'max' => 20],
             [['title'], 'string', 'max' => 50],
             [['pic'], 'string', 'max' => 100],
-            [['create_id', 'point_id','old_point_id'], 'string', 'max' => 30],
+            [['create_id', 'point_id','old_point_id','insert_time'], 'string', 'max' => 30],
             [['instrPic','instr','process'],'safe'],
         ];
     }
@@ -66,6 +67,7 @@ class Cases extends \yii\db\ActiveRecord
             'status' => '状态',
             'instr' => '说明',
             'instrPic' => '说明图片（可不上传）',
+            'insert_time' => '插入时间'
 
         ];
     }
@@ -145,5 +147,17 @@ class Cases extends \yii\db\ActiveRecord
         }
 
         return true;
+    }
+
+    public function beforeSave($insert)
+    {
+        if(parent::beforeSave($insert)){
+            if($insert){
+                $this->insert_time = date('Y-m-d H:i:s',time());
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
 }

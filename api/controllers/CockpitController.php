@@ -9,11 +9,13 @@
 namespace api\controllers;
 
 
+use api\models\CockpitModel;
 use api\models\CommonModel;
 use frontend\models\Score;
 use frontend\models\Student;
 use frontend\models\Teacher;
 use frontend\models\Test;
+use frontend\models\Wire;
 
 class CockpitController extends MyController
 {
@@ -54,7 +56,7 @@ class CockpitController extends MyController
         //列表
         $list = Score::find()->leftJoin('student','student.student_id = score.student_id')
             ->select('score.name,score.grade,score.banji,score.total,score.school_rank,student.pic')
-            ->where(['test_num' => '20191551929393'])
+            ->where(['test_num' => $newTest['test_num']])
             ->orderBy('score.school_rank asc')
             ->limit(20)
             ->asArray()
@@ -63,12 +65,12 @@ class CockpitController extends MyController
             'list' => $list
         ];
     }
-
+    //本次考试各班本科概况
     public function actionRegularMap(){
         $newTest = CommonModel::getNewTest();
-        $regularWire = '425';
+        $regularWire = (Wire::findOne(['test_num' => $newTest['test_num']]))->benke_wire;
         $list = Score::find()
-            ->where(['test_num' => '20191551929393'])
+            ->where(['test_num' => $newTest['test_num']])
             ->andFilterWhere(['>=','total',$regularWire])
             ->select('count(*) as value,banji as name')
             ->groupBy('banji')
@@ -76,7 +78,7 @@ class CockpitController extends MyController
             ->asArray()
             ->all();
         $totalNum =  Score::find()
-            ->where(['test_num' => '20191551929393'])
+            ->where(['test_num' => $newTest['test_num']])
             ->andFilterWhere(['>','total',$regularWire])
             ->count();
         foreach ($list as &$aitem){
@@ -87,12 +89,12 @@ class CockpitController extends MyController
            'list' => $list
        ];
     }
-
+    //本次考试重本分布
     public function actionWeighDistribution(){
         $newTest = CommonModel::getNewTest();
-        $weightWire = '500';
+        $weightWire = (Wire::findOne(['test_num' => $newTest['test_num']]))->zhongben_wire;
         $list = Score::find()
-            ->where(['test_num' => '20191551929393'])
+            ->where(['test_num' => $newTest['test_num']])
             ->andFilterWhere(['>=','total',$weightWire])
             ->select('count(*) as value,banji as name')
             ->groupBy('banji')
@@ -100,7 +102,7 @@ class CockpitController extends MyController
             ->asArray()
             ->all();
         $totalNum =  Score::find()
-            ->where(['test_num' => '20191551929393'])
+            ->where(['test_num' => $newTest['test_num']])
             ->andFilterWhere(['>','total',$weightWire])
             ->count();
         foreach ($list as &$aitem){
@@ -110,17 +112,62 @@ class CockpitController extends MyController
             'list' => $list
         ];
     }
-
+    //年度本科上线率
     public function actionYearWire(){
-        $start = date('Y',time()).'-01-01 00:00:00';
-        $end = date('Y',time()).'-12-31 23:59:59';
+        $list['three'] =  CockpitModel::getYearRatio(CockpitModel::GRADE_ONE,CockpitModel::STUDENT_LIKE);
+        $list['two'] =  CockpitModel::getYearRatio(CockpitModel::GRADE_TWO,CockpitModel::STUDENT_LIKE);
+        $list['one'] =  CockpitModel::getYearRatio(CockpitModel::GRADE_THREE,CockpitModel::STUDENT_LIKE);
 
-        $list = Score::find()->where(['total'])
-            ->andFilterWhere(['<=','insert_time',$end])
-            ->andFilterWhere(['>=','insert_time',$start]);
+        return [
+            'list' => $list
+        ];
+    }
+    //底部轮子
+    public function actionWheel(){
+        //最新考试
+        $newTest = CommonModel::getNewTest();
+        $model = Wire::findOne(['test_num' => $newTest['test_num']]);
+        //本科上线人数
+        $benkeNum = $model->benke_num;
+        //重本上线人数
+        $zhongbenNum = $model->zhongben_num;
+        //本次考试总人数
+        $totalNum = CockpitModel::getTestStudentNum($newTest['test_num']);
+        //本科上线率
+        $benkeRatio = (string)(round(($benkeNum / $totalNum)*100,'0')) ;
+        //重本占比
+        $zhongbenRatio = (string)(round(($zhongbenNum / $benkeNum)*100,'0')) ;
+
+        return [
+            'benkeRatio' => $benkeRatio,
+            'zhongbenRatio' => $zhongbenRatio,
+        ];
     }
 
-    public function actionWheel(){
-        
+    /**
+     *校园案件概况
+     */
+    public function actionCaseOverview(){
+        //案件总量
+        $caseTotal = CockpitModel::getCaseTotalNum();
+        //日均案件量
+        $caseAvg = CockpitModel::getCaseAvgDayNum();
+        //受理率
+        $acceptRatio = CockpitModel::getAcceptRatio();
+        return [
+            'caseTotal' => $caseTotal,
+            'caseAvg' => $caseAvg,
+            'acceptRatio' => $acceptRatio,
+        ];
+    }
+
+    /**
+     * 事件高发类型TOP6
+     */
+    public function actionHighCase(){
+        $list = CockpitModel::getCaseHighType();
+        return [
+            'list' => $list
+        ];
     }
 }
