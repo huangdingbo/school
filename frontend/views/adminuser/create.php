@@ -25,6 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
+    <?=$form->field($model, 'pic')->widget('manks\FileInput', []); ?>
+
     <?= $form->field($model, 'profile')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

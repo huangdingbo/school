@@ -2,52 +2,53 @@
 
 /* @var $this yii\web\View */
 
-$this->title = \Yii::$app->params['appName'];
+$this->title = false;
+$title = \Yii::$app->params['appName'];
+$userId = Yii::$app->user->id;
+$userModel = \frontend\models\Adminuser::findOne(['id'=>$userId]);
+$userName = isset($userModel) ? $userModel->username : '';
+$nickName = isset($userModel) ? $userModel->nickname : '';
+$lastLogin = isset($userModel) ? $userModel->last_login : '';
+$list = array(
+                '域名' => $_SERVER['HTTP_HOST'],
+                '域名指向地址' => $_SERVER['DOCUMENT_ROOT'],
+                '入口文件地址' => $_SERVER['SCRIPT_FILENAME'],
+                '本页URL' => Yii::$app->request->getHostInfo().Yii::$app->request->url,
+                '基础URL' => Yii::$app->request->getHostInfo().Yii::$app->request->getBaseUrl(),
+                '用户IP' => Yii::$app->request->userIP,
+                '服务器内网IP' => $_SERVER['SERVER_ADDR'],
+                '服务器外网IP' => '47.106.234.70',
+                'PHP版本' => phpversion(),
+                'MYSQL版本' => Yii::$app->db->pdo->getAttribute(PDO::ATTR_SERVER_VERSION),
+                'nginx版本' => '1.14.0',
+    );
+$i = 0;
 ?>
+<style>
+    .table-responsive{
+        width: 800px;
+        margin: 0 auto;
+    }
+</style>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <h2><?=$nickName?>用户，你已登录<?=$title?>！！！</h2>
     </div>
 
     <div class="body-content">
+        <div class="table-responsive">
+            <table class="table">
+                <?php foreach ($list as $key => $item){?>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                    <tr>
+                        <td><?=$key?></td>
+                        <td><?=$item?></td>
+                    </tr>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <?php }?>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+            </table>
         </div>
-
     </div>
 </div>

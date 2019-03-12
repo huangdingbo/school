@@ -20,6 +20,10 @@ use yii\web\ForbiddenHttpException;
  */
 class Test extends \yii\db\ActiveRecord
 {
+    public $benkeWire;
+    public $benkeNum;
+    public $zhongbenWire;
+    public $zhongbenNum;
     /**
      * {@inheritdoc}
      */
@@ -64,9 +68,9 @@ class Test extends \yii\db\ActiveRecord
 
     public function beforeSave($insert)
     {
-        $this->test_num = (Grade::find()->where(['id'=>$this->grade_num])->one())->the.time();
         if(parent::beforeSave($insert)){
             if($insert){
+                $this->test_num = (Grade::find()->where(['id'=>$this->grade_num])->one())->the.time();
                 $this->insert_time = date('Y-m-d H:i:s',time());
                 $this->update_time = date('Y-m-d H:i:s',time());
             }else{
@@ -157,10 +161,7 @@ class Test extends \yii\db\ActiveRecord
         foreach ($kaohaoList as &$item){
             $item['test_num'] = $testInfo->test_num;
             $item['test_name'] = $testInfo->test_name;
-            $item['test_id'] = $item['cand_num'];
-            $item['name'] = $item['student_name'];
-            $item['grade'] = $item['grade_name'];
-            $item['banji'] = $item['class_name'];
+            $item['test_id'] = $item['cand_id'];
         }
 
         //排考试座位
@@ -194,6 +195,10 @@ class Test extends \yii\db\ActiveRecord
         }
 
         return $kaohaoList;
+    }
+
+    public function getWire0(){
+        return $this->hasOne(Wire::className(),['test_num'=> 'test_num']);
     }
 
 }

@@ -11,12 +11,20 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+            'uploadDir' => '/data/websites/yii/school/frontend/web/upload',  // 比如这里可以填写 ./uploads
+            'uploadUrl' => 'http://huangdingbo.work/school/frontend/web/upload',
+            'imageAllowExtensions'=>['jpg','png','gif']
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => '\frontend\models\Adminuser',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],

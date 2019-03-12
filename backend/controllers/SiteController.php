@@ -1,6 +1,9 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\Lol;
+use common\models\User;
+use frontend\models\Class0;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -18,20 +21,20 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'rules' => [
+//                    [
+//                        'actions' => ['login', 'error'],
+//                        'allow' => true,
+//                    ],
+//                    [
+//                        'actions' => ['logout'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -96,5 +99,14 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionTest0(){
+
+        $model = new Lol();
+//        var_dump(Yii::$app->request->post());exit;
+        return $this->render('test',[
+            'model' => $model
+        ]);
     }
 }

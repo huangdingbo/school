@@ -9,20 +9,20 @@
 namespace api\controllers;
 
 
+use api\models\MyModel;
 use yii\web\Controller;
 
-class TestController extends Controller
+class TestController extends MyController
 {
-    public function actionIndex(){
-        \Yii::$app->response->format = 'json';
-        $list = array(
-            'result' => 'ok',
-            'time' => time(),
-        );
 
-        return [
-            'list' => $list
-        ];
+    public function actionIndex(){
+
+      $list = MyModel::make('student')->select('*')->all();
+
+      return [
+          'list' => $list,
+          'csrf' => \Yii::$app->request->csrfToken
+      ];
     }
 
 }

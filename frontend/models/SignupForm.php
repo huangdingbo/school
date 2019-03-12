@@ -16,6 +16,7 @@ class SignupForm extends Model
     public $profile;
     public $nickname;
     public $id;
+    public $pic;
 
 
     /**
@@ -42,6 +43,8 @@ class SignupForm extends Model
 
             ['nickname','required'],
             ['profile','string','max'=>128],
+
+            [['pic'], 'string', 'max' => 100],
         ];
     }
 
@@ -54,6 +57,7 @@ class SignupForm extends Model
             'password_repeat' => '再次输入密码',
             'email' => 'Email',
             'profile' => '简介',
+            'pic' => '照片',
         ];
     }
 
@@ -79,6 +83,7 @@ class SignupForm extends Model
         $user->generateAuthKey();
         $user->password = '*';
         $user->password_reset_token = '';
+        $user->pic = \Yii::$app->params['domain'].$this->pic;
 //        $user->save();
 //        var_dump($user->errors);exit;
         return $user->save() ? $user : null;

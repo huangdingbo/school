@@ -59,8 +59,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{update}{candidate}{entry}{audit}{delete}',
+                'template' => '{view}{update}{candidate}{entry}{wire}{audit}{delete}',
                 'buttons' => [
+                    'view' => function ($url, $model, $key) {
+                        return Html::a('<span class = "glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;', $url, [
+                            'title' => Yii::t('yii','查看'),
+                            'aria-label' => Yii::t('yii','查看'),
+                            'data-toggle' => 'modal',
+                            'data-target' => '#view-modal',
+                            'class' => 'data-view',
+                            'data-id' => $key,
+                        ]);
+                    },
                     'update' => function ($url, $model, $key) {
                         return Html::a('<span class = "glyphicon glyphicon-saved"></span>&nbsp;&nbsp;', $url, [
                             'title' => Yii::t('yii','修改'),
@@ -93,6 +103,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         ];
                         return Html::a('<span class = "glyphicon glyphicon-pencil"></span>   ',$url,$options);
                     },
+                    'wire' =>function ($url, $model, $key) {
+                        return Html::a('<span class = "glyphicon glyphicon-list"></span>&nbsp;&nbsp;', $url, [
+                            'title' => Yii::t('yii','划线'),
+                            'aria-label' => Yii::t('yii','划线'),
+                            'data-toggle' => 'modal',
+                            'data-target' => '#wire-modal',
+                            'class' => 'data-wire',
+                            'data-id' => $key,
+                        ],['color'=>'red']);
+                    },
                     'audit' => function($url,$model,$key){
                         $options = [
                             'title' => Yii::t('yii','结束考试'),
@@ -102,15 +122,34 @@ $this->params['breadcrumbs'][] = $this->title;
                             'data-pjax' => '0',
 //                            'controller'=>'tkaohao',
                         ];
-                        return Html::a('<span class = "glyphicon glyphicon-transfer"></span>  ',$url,$options);
+                        return Html::a('<span class = "glyphicon glyphicon-off"></span>  ',$url,$options);
                     }
                 ],
             ],
         ],
     ]); ?>
-
     <?php
-
+    // 查看操作
+    Modal::begin([
+        'id' => 'view-modal',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">查看</h4>',
+        'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
+        'size' => 'modal-lg',
+    ]);
+    Modal::end();
+    $requestViewUrl = Url::toRoute('view');
+    $viewJs = <<<JS
+    $('.data-view').on('click', function () {
+        $.get('{$requestViewUrl}', { id: $(this).closest('tr').data('key') },
+            function (data) {
+                $('.modal-body').html(data);
+            }  
+        );
+    });
+JS;
+    $this->registerJs($viewJs);
+    ?>
+    <?php
     // 更新操作
     Modal::begin([
         'id' => 'update-modal',
@@ -121,6 +160,28 @@ $this->params['breadcrumbs'][] = $this->title;
     $requestUpdateUrl = Url::toRoute('update');
     $updateJs = <<<JS
     $('.data-update').on('click', function () {
+        $.get('{$requestUpdateUrl}', { id: $(this).closest('tr').data('key') },
+            function (data) {
+                $('.modal-body').html(data);
+            }  
+        );
+    });
+JS;
+    $this->registerJs($updateJs);
+    ?>
+
+    <?php
+
+    // 划线
+    Modal::begin([
+        'id' => 'wire-modal',
+        'header' => '<h4 class="modal-title" style="color: #0d6aad">划线</h4>',
+        'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
+    ]);
+    Modal::end();
+    $requestUpdateUrl = Url::toRoute('wire');
+    $updateJs = <<<JS
+    $('.data-wire').on('click', function () {
         $.get('{$requestUpdateUrl}', { id: $(this).closest('tr').data('key') },
             function (data) {
                 $('.modal-body').html(data);

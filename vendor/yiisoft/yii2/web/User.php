@@ -263,6 +263,7 @@ class User extends Component
             Yii::info($log, __METHOD__);
             $this->afterLogin($identity, false, $duration);
         }
+//        exit();
 
         return !$this->getIsGuest();
     }

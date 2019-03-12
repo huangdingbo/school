@@ -143,7 +143,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <?php
-
     // 更新操作
     Modal::begin([
         'id' => 'update-modal',
@@ -166,7 +165,6 @@ JS;
     ?>
 
     <?php
-
     // 查看操作
     Modal::begin([
         'id' => 'view-modal',

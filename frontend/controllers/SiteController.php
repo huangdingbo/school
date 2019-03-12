@@ -28,7 +28,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['logout', 'signup','index'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -36,7 +36,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout','index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -79,6 +79,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+////        var_dump(Yii::$app->user->id);exit;
+//        var_dump(Yii::$app->user);
+//        exit();
         return $this->render('index');
     }
 
@@ -94,8 +97,19 @@ class SiteController extends Controller
         }
         $model = new AdminLoginForm(['scenario' => 'login']);
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+//            var_dump(Yii::$app->request->post());
+//            var_dump($this->goBack());
+//            exit;
+//            var_dump(Yii::$app->user->id);exit;
+//            return $this->render('index');
+//            echo 111;exit;
+
+
+
             return $this->goBack();
         } else {
+//            var_dump($model->errors);
+//            echo 2222;exit;
             $model->password = '';
 
             return $this->render('login', [

@@ -115,11 +115,12 @@ class AdminuserController extends Controller
     {
 
         $model = $this->findModel($id);
+        $model -> password = '*';
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         }
-
+        var_dump($model->errors);
         return $this->render('update', [
             'model' => $model,
         ]);

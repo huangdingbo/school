@@ -13,28 +13,51 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="test-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'test_num',
             'test_name',
-            'grade_num',
-            'status',
-            'type',
+            [
+                'attribute' => 'grade_num',
+                'label' => '年级',
+                'value'=>$model->grade0->name,
+            ],
+            [
+                'attribute' => 'status',
+                'label' => '状态',
+                'value'=>function($model){
+                    return $model->status == 1 ? '正在进行' : '已结束';
+                }
+            ],
+            [
+                'attribute' => 'type',
+                'label' => '类型',
+                'value'=>function($model){
+                    return $model->type == 1 ? '理科' : '文科';
+                }
+            ],
+            [
+                'attribute' => 'benkeWire',
+                'label' => '本科线',
+                'value'=> !isset($model->wire0->benke_wire)  ? '未划线' : $model->wire0->benke_wire,
+            ],
+            [
+                'attribute' => 'benkeNum',
+                'label' => '本科上线人数',
+                'value'=> !isset($model->wire0->benke_wire) ? '未划线' :$model->wire0->benke_num,
+            ],
+            [
+                'attribute' => 'zhongbenWire',
+                'label' => '重本线',
+                'value'=>!isset( $model->wire0->zhongben_wire) ? '未划线' : $model->wire0->zhongben_wire,
+            ],
+            [
+                'attribute' => 'zhongbenNum',
+                'label' => '重本上线人数',
+                'value'=>!isset( $model->wire0->zhongben_wire) ? '未划线' : $model->wire0->zhongben_num,
+            ],
             'insert_time',
             'update_time',
         ],

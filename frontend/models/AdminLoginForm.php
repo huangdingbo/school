@@ -72,6 +72,7 @@ class AdminLoginForm extends Model
      */
     public function login()
     {
+
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
@@ -87,7 +88,7 @@ class AdminLoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = AdminUser::findByUsername($this->username);
+            $this->_user = Adminuser::findByUsername($this->username);
         }
 
         return $this->_user;

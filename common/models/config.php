@@ -74,4 +74,20 @@ class config
         var_dump($data);exit;
     }
 
+    public static $caseType = [
+        '1' => '打架斗殴',
+        '2' => '抽烟',
+        '3' => '酗酒',
+        '4' => '逃课',
+        '5' => '上网',
+        '6' => '迟到',
+        '7' => '携带手机',
+        '8' => '上课睡觉',
+    ];
+
+    public static $caseStatus = [
+        '1' => '处理中',
+        '2' => '已解决',
+    ];
+
 }

@@ -11,7 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+            'uploadDir' => '/data/websites/yii/school/backend/web/upload',  // 比如这里可以填写 ./uploads
+            'uploadUrl' => 'http://huangdingbo.work/school/backend/web/upload',
+            'imageAllowExtensions'=>['jpg','png','gif']
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

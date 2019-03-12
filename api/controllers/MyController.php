@@ -19,6 +19,7 @@ class MyController extends Controller
 
     public function behaviors()
     {
+
         return ArrayHelper::merge([
             [
                 'class' => Cors::className(),

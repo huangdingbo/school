@@ -81,6 +81,8 @@
       <path value="$PROJECT_DIR$/vendor/jaeger/phpquery-single" />
       <path value="$PROJECT_DIR$/vendor/jaeger/querylist" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" />
+      <path value="$PROJECT_DIR$/vendor/linslin/yii2-curl" />
+      <path value="$PROJECT_DIR$/vendor/yiidoc/yii2-redactor" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
