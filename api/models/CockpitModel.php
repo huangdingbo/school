@@ -79,7 +79,8 @@ class CockpitModel extends Model
         //总案件量
         $total = self::getCaseTotalNum();
         //日均案件量
-        $caseAvg = (string)(round(($total / $days)*100,'2')) ;
+        $caseAvg = (string)(round(($total / $days),'2')) ;
+
         return $caseAvg;
     }
 
