@@ -35,7 +35,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Lists all Student models.
+     * Lists all Student aa.
      * @return mixed
      */
     public function actionIndex()
@@ -68,7 +68,7 @@ class StudentController extends Controller
 
             $excel = new SaveExcel([
 
-                'models' => $models,
+                'aa' => $models,
 
                 'fields' => ['name','student_id','test_id','sex','born_time','grade','banji','duty','home_address','admission_time','political_landscape', 'type'], //限制输出的列
             ]);

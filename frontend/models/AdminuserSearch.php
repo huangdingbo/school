@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Adminuser;
 
 /**
- *  AdminuserSearch represents the model behind the search form of `frontend\models\Adminuser`.
+ *  AdminuserSearch represents the model behind the search form of `frontend\aa\Adminuser`.
  */
 class AdminuserSearch extends Adminuser
 {

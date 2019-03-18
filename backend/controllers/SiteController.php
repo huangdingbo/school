@@ -1,9 +1,12 @@
 <?php
 namespace backend\controllers;
 
+use api\models\CommonModel;
 use backend\models\Lol;
 use common\models\User;
+use frontend\models\A;
 use frontend\models\Class0;
+use frontend\models\Score;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -108,5 +111,9 @@ class SiteController extends Controller
         return $this->render('test',[
             'model' => $model
         ]);
+    }
+
+    public function actionTest(){
+        var_dump(A::test());exit;
     }
 }

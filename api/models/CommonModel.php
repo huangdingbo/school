@@ -126,4 +126,8 @@ class CommonModel extends Model
         return $array;
     }
 
+    public static function test(){
+        return 111;
+    }
+
 }

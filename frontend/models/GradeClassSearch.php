@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\GradeClass;
 
 /**
- * GradeClassSearch represents the model behind the search form of `frontend\models\GradeClass`.
+ * GradeClassSearch represents the model behind the search form of `frontend\aa\GradeClass`.
  */
 class GradeClassSearch extends GradeClass
 {

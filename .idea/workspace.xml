@@ -2,15 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14195127-8217-420c-83ac-7415b8750fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/controllers/ClassAnalysisController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/controllers/DisciplineAnalysisController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/controllers/ReadGradeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/ClassAnalysisModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/DisciplineAnalysisModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/ReadGradeModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/WarningController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/console/controllers/WarningController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/CockpitModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/CockpitModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/codeception.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/codeception.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/TestController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/TestGit.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/CommonModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/CommonModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/assets/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/assets/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeception.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codeception.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/AdminuserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/AdminuserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/CaseProcessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CaseProcessController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/CasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CasesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/Class0Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/Class0Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/ClassMessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/ClassMessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/DiplomaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/DiplomaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/DutyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/DutyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/GradeClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/GradeClassController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/GradeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/GradeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/KaohaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/KaohaoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/PoliticalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/PoliticalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/ScoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/ScoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/TitleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TitleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/WireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/WireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/AdminuserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/AdminuserSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/CaseProcessSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CaseProcessSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/CasesOverviewSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CasesOverviewSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/CasesSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CasesSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/Class0Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/Class0Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/ClassMessageSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ClassMessageSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/CourseSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CourseSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/DiplomaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/DiplomaSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/DutySearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/DutySearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/GradeClassSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/GradeClassSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/GradeSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/GradeSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/KaohaoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/KaohaoSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/PoliticalSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/PoliticalSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/RoomSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/RoomSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/ScoreSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ScoreSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/StudentSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StudentSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/TeacherSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TeacherSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/TestSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TestSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/TitleSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TitleSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/WireSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/WireSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii" beforeDir="false" afterPath="$PROJECT_DIR$/yii" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,33 +86,40 @@
         <counts>
           <entry key="gitconfig" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="htaccess" value="1" />
+          <entry key="htaccess" value="2" />
+          <entry key="ico" value="1" />
+          <entry key="init" value="1" />
           <entry key="jpg" value="1" />
           <entry key="js" value="2" />
-          <entry key="json" value="8" />
-          <entry key="php" value="739" />
+          <entry key="json" value="9" />
+          <entry key="php" value="790" />
           <entry key="test" value="1" />
           <entry key="tex" value="2" />
-          <entry key="yii" value="1" />
+          <entry key="txt" value="5" />
+          <entry key="yii" value="3" />
+          <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="1" />
-          <entry key="JSON" value="8" />
+          <entry key="Image" value="2" />
+          <entry key="JSON" value="9" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="740" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="htaccess" value="1" />
+          <entry key="PHP" value="794" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="YAML" value="3" />
+          <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="10" />
+          <entry key="dummy" value="12" />
           <entry key="json" value="3" />
-          <entry key="php" value="39134" />
+          <entry key="php" value="42093" />
           <entry key="tex" value="4" />
           <entry key="txt" value="30" />
+          <entry key="yii" value="13" />
+          <entry key="yml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -75,13 +127,14 @@
           <entry key="HTML" value="26" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="11" />
-          <entry key="PHP" value="39097" />
-          <entry key="PLAIN_TEXT" value="44" />
+          <entry key="PHP" value="42069" />
+          <entry key="PLAIN_TEXT" value="46" />
+          <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="18" />
+          <entry key="PHP Class.type" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -89,6 +142,7 @@
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -103,7 +157,7 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.78" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -115,7 +169,32 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/controllers/WarningController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="216" column="1" lean-forward="true" selection-start-line="216" selection-start-column="1" selection-end-line="216" selection-end-column="1" />
+              <folding>
+                <element signature="e#122#152#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/console/controllers/WarningController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="39" column="109" lean-forward="true" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
+              <folding>
+                <element signature="e#121#151#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -162,16 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/views/layouts/header.php" />
-        <option value="$PROJECT_DIR$/api/models/MyModel.php" />
-        <option value="$PROJECT_DIR$/api/web/.htaccess" />
-        <option value="$PROJECT_DIR$/api/config/main.php" />
-        <option value="$PROJECT_DIR$/api/controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/api/controllers/MyController.php" />
-        <option value="$PROJECT_DIR$/console/controllers/ScoreController.php" />
-        <option value="$PROJECT_DIR$/frontend/views/wire/create.php" />
-        <option value="$PROJECT_DIR$/frontend/views/wire/_form.php" />
-        <option value="$PROJECT_DIR$/frontend/models/Wire.php" />
         <option value="$PROJECT_DIR$/frontend/views/test/index.php" />
         <option value="$PROJECT_DIR$/frontend/models/ScoreSearch.php" />
         <option value="$PROJECT_DIR$/frontend/views/test/view.php" />
@@ -181,7 +250,6 @@
         <option value="$PROJECT_DIR$/backend/web/upload/ff.tex" />
         <option value="$PROJECT_DIR$/backend/config/main.php" />
         <option value="$PROJECT_DIR$/vendor/yiidoc/yii2-redactor/RedactorModule.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/common/models/config.php" />
         <option value="$PROJECT_DIR$/frontend/views/student/index.php" />
         <option value="$PROJECT_DIR$/frontend/views/student/view.php" />
@@ -210,9 +278,20 @@
         <option value="$PROJECT_DIR$/frontend/models/Cases.php" />
         <option value="$PROJECT_DIR$/api/controllers/CockpitController.php" />
         <option value="$PROJECT_DIR$/api/models/CockpitModel.php" />
-        <option value="$PROJECT_DIR$/api/models/CommonModel.php" />
         <option value="$PROJECT_DIR$/api/models/ReadGradeModel.php" />
         <option value="$PROJECT_DIR$/api/controllers/ReadGradeController.php" />
+        <option value="$PROJECT_DIR$/api/models/CommonModel.php" />
+        <option value="$PROJECT_DIR$/api/codeception.yml" />
+        <option value="$PROJECT_DIR$/api/config/test.php" />
+        <option value="$PROJECT_DIR$/a/models/aa.php" />
+        <option value="$PROJECT_DIR$/codeception.yml" />
+        <option value="$PROJECT_DIR$/frontend/models/A.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/yii" />
+        <option value="$PROJECT_DIR$/common/config/bootstrap.php" />
+        <option value="&lt;5441acf1-3f26-4376-8f40-d384ce619b6b&gt;/backend/web/index.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/WarningController.php" />
+        <option value="$PROJECT_DIR$/console/controllers/WarningController.php" />
       </list>
     </option>
   </component>
@@ -330,30 +409,29 @@
             <path>
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school" type="b2602c69:ProjectViewProjectNode" />
               <item name="school" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,12 +454,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\work\school\a\models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\work\school\backend\controllers" />
       <recent name="F:\work\school\frontend\models" />
       <recent name="F:\work\school\frontend\web" />
       <recent name="F:\work\school\frontend\views" />
       <recent name="F:\work\school\frontend\views\score" />
-      <recent name="F:\work\school\frontend\uploads\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -429,6 +510,7 @@
       <workItem from="1552619849838" duration="11555000" />
       <workItem from="1552650590178" duration="1881000" />
       <workItem from="1552874961978" duration="288000" />
+      <workItem from="1552881990725" duration="15538000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1548264072883</created>
@@ -525,7 +607,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352645000" />
+    <option name="totallyTimeSpent" value="368183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -538,12 +620,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.184375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.155625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32853404" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -559,7 +642,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.01375" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.04875" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,249 +671,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="oa" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/point.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/solve.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/activation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/student/create.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/student/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/adminuser/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/AdminuserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/SignupForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="85" column="61" selection-start-line="85" selection-start-column="61" selection-end-line="85" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/config/params-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/config/params.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Component.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="452" column="20" selection-start-line="452" selection-start-column="20" selection-end-line="452" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="738" column="20" selection-start-line="738" selection-start-column="20" selection-end-line="738" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/StudentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/BaseYii.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="444" column="27" selection-start-line="444" selection-start-column="27" selection-end-line="444" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/config/params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/config/params-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Adminuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5275">
-          <caret line="217" column="20" selection-start-line="217" selection-start-column="20" selection-end-line="217" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/AdminLoginForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="76" column="39" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/UserEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16275">
-          <caret line="659" column="12" selection-start-line="659" selection-start-column="12" selection-end-line="659" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="21" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/CasesSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/CasesOverviewSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/overview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="73" column="93" selection-start-line="73" selection-start-column="93" selection-end-line="73" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/cases/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/CasesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/header.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -876,16 +716,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/TestGit.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/CommonModel.php">
+    <entry file="file://$PROJECT_DIR$/api/controllers/TestController.php" />
+    <entry file="file://$PROJECT_DIR$/api/controllers/TestGit.php" />
+    <entry file="file://$PROJECT_DIR$/api/controllers/CockpitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2525">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+        <state relative-caret-position="1475">
+          <caret line="70" column="89" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -896,29 +732,228 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/CockpitController.php">
+    <entry file="file://$PROJECT_DIR$/api/models/ClassAnalysisModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1475">
-          <caret line="70" column="89" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="89" />
-        </state>
+        <state relative-caret-position="-3086" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/DisciplineAnalysisModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/MyModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/ReadGradeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4475">
-          <caret line="184" column="14" lean-forward="true" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="14" />
+        <state relative-caret-position="175">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Score.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
           <folding>
-            <element signature="e#117#144#0#PHP" expanded="true" />
+            <element signature="e#35#60#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/codeception.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/web/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/web/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/web/index-test.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/params.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/test-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a/models/aa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/codeception.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeception.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/A.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2164">
+          <caret line="111" column="29" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+          <folding>
+            <element signature="e#38#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/params.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/test.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/test-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="85" lean-forward="true" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/CommonModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/models/ReadGradeModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="170" column="35" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+        <state relative-caret-position="39">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="46" />
           <folding>
             <element signature="e#112#139#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/WarningController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="216" column="1" lean-forward="true" selection-start-line="216" selection-start-column="1" selection-end-line="216" selection-end-column="1" />
+          <folding>
+            <element signature="e#122#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/ScoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="62" column="77" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="62" selection-end-column="77" />
+          <folding>
+            <element signature="e#118#145#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/WarningController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="39" column="109" lean-forward="true" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
+          <folding>
+            <element signature="e#121#151#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

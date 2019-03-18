@@ -33,7 +33,7 @@ class CasesController extends Controller
     }
 
     /**
-     * Lists all Cases models.
+     * Lists all Cases aa.
      * @return mixed
      */
     public function actionIndex()

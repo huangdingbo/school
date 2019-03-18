@@ -34,7 +34,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Lists all Course models.
+     * Lists all Course aa.
      * @return mixed
      */
     public function actionIndex()

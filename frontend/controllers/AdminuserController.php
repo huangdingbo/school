@@ -40,7 +40,7 @@ class AdminuserController extends Controller
     }
 
     /**
-     * Lists all Adminuser models.
+     * Lists all Adminuser aa.
      * @return mixed
      */
     public function actionIndex()

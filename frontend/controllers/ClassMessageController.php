@@ -33,7 +33,7 @@ class ClassMessageController extends Controller
     }
 
     /**
-     * Lists all ClassMessage models.
+     * Lists all ClassMessage aa.
      * @return mixed
      */
     public function actionIndex()

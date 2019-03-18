@@ -33,7 +33,7 @@ class KaohaoController extends Controller
     }
 
     /**
-     * Lists all Kaohao models.
+     * Lists all Kaohao aa.
      * @return mixed
      */
     public function actionIndex()
@@ -63,7 +63,7 @@ class KaohaoController extends Controller
 
             $excel = new SaveExcel([
 
-                'models' => $models,
+                'aa' => $models,
 
                 'fileName' => $models[0]->test_name.'-'.$models[0]->grade_name.'考号表',
 

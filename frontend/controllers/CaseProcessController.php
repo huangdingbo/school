@@ -30,7 +30,7 @@ class CaseProcessController extends Controller
     }
 
     /**
-     * Lists all CaseProcess models.
+     * Lists all CaseProcess aa.
      * @return mixed
      */
     public function actionIndex()

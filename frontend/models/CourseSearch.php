@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Course;
 
 /**
- * CourseSearch represents the model behind the search form of `frontend\models\Course`.
+ * CourseSearch represents the model behind the search form of `frontend\aa\Course`.
  */
 class CourseSearch extends Course
 {

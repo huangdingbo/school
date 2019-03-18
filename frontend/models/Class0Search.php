@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Class0;
 
 /**
- * Class0Search represents the model behind the search form of `frontend\models\Class0`.
+ * Class0Search represents the model behind the search form of `frontend\aa\Class0`.
  */
 class Class0Search extends Class0
 {

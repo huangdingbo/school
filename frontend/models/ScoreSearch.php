@@ -9,7 +9,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Score;
 
 /**
- * ScoreSearch represents the model behind the search form of `frontend\models\Score`.
+ * ScoreSearch represents the model behind the search form of `frontend\aa\Score`.
  */
 class ScoreSearch extends Score
 {

@@ -31,7 +31,7 @@ class Class0Controller extends Controller
     }
 
     /**
-     * Lists all Class0 models.
+     * Lists all Class0 aa.
      * @return mixed
      */
     public function actionIndex()

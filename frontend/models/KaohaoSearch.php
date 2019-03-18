@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Kaohao;
 
 /**
- * KaohaoSearch represents the model behind the search form of `frontend\models\Kaohao`.
+ * KaohaoSearch represents the model behind the search form of `frontend\aa\Kaohao`.
  */
 class KaohaoSearch extends Kaohao
 {

@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Title;
 
 /**
- * TitleSearch represents the model behind the search form of `frontend\models\Title`.
+ * TitleSearch represents the model behind the search form of `frontend\aa\Title`.
  */
 class TitleSearch extends Title
 {

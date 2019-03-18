@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\ClassMessage;
 
 /**
- * ClassMessageSearch represents the model behind the search form of `frontend\models\ClassMessage`.
+ * ClassMessageSearch represents the model behind the search form of `frontend\aa\ClassMessage`.
  */
 class ClassMessageSearch extends ClassMessage
 {

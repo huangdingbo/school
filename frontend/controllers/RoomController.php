@@ -33,7 +33,7 @@ class RoomController extends Controller
     }
 
     /**
-     * Lists all Room models.
+     * Lists all Room aa.
      * @return mixed
      */
     public function actionIndex()

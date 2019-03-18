@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\CaseProcess;
 
 /**
- * CaseProcessSearch represents the model behind the search form of `frontend\models\CaseProcess`.
+ * CaseProcessSearch represents the model behind the search form of `frontend\aa\CaseProcess`.
  */
 class CaseProcessSearch extends CaseProcess
 {

@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Diploma;
 
 /**
- * DiplomaSearch represents the model behind the search form of `frontend\models\Diploma`.
+ * DiplomaSearch represents the model behind the search form of `frontend\aa\Diploma`.
  */
 class DiplomaSearch extends Diploma
 {
