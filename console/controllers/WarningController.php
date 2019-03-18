@@ -72,7 +72,7 @@ class WarningController extends Controller{
                         'score_id' => $item['id'],
                         'type' => '2',
                         'warning_test' => $item['test_num'],
-                        'content' => $this->getContent('2',($onlineOrofflineScore)),
+                        'content' => $this->getContent('2',($judge)),
                         'status' => '1',
                     ];
                     $this->insertWarningData($warningInfo);
@@ -92,7 +92,7 @@ class WarningController extends Controller{
                         'score_id' => $item['id'],
                         'type' => '3',
                         'warning_test' => $item['test_num'],
-                        'content' => $this->getContent('3',($item['total'] - 300)),
+                        'content' => $this->getContent('3',(300 - $item['total'])),
                         'status' => '1',
                     ];
                     $this->insertWarningData($warningInfo);

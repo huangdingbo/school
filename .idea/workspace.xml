@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14195127-8217-420c-83ac-7415b8750fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/WarningController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/console/controllers/WarningController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/codeception.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/codeception.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/TestController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/TestGit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/CommonModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/CommonModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/assets/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/assets/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeception.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codeception.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/AdminuserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/AdminuserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/CaseProcessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CaseProcessController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/CasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/Class0Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/Class0Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/ClassMessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/ClassMessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/DiplomaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/DiplomaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/DutyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/DutyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/GradeClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/GradeClassController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/GradeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/GradeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/KaohaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/KaohaoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/PoliticalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/PoliticalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/ScoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/ScoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/TitleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TitleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/WireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/WireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/AdminuserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/AdminuserSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/CaseProcessSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CaseProcessSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/CasesOverviewSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CasesOverviewSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/CasesSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CasesSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/Class0Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/Class0Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/ClassMessageSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ClassMessageSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/CourseSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/CourseSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/DiplomaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/DiplomaSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/DutySearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/DutySearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/GradeClassSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/GradeClassSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/GradeSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/GradeSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/KaohaoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/KaohaoSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/PoliticalSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/PoliticalSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/RoomSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/RoomSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/ScoreSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ScoreSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/StudentSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/StudentSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/TeacherSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TeacherSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/TestSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TestSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/TitleSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/TitleSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/WireSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/WireSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii" beforeDir="false" afterPath="$PROJECT_DIR$/yii" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/controllers/WarningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/controllers/WarningController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,9 +63,9 @@
         <counts>
           <entry key="dummy" value="12" />
           <entry key="json" value="3" />
-          <entry key="php" value="42093" />
+          <entry key="php" value="42099" />
           <entry key="tex" value="4" />
-          <entry key="txt" value="30" />
+          <entry key="txt" value="38" />
           <entry key="yii" value="13" />
           <entry key="yml" value="15" />
         </counts>
@@ -127,8 +75,8 @@
           <entry key="HTML" value="26" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="11" />
-          <entry key="PHP" value="42069" />
-          <entry key="PLAIN_TEXT" value="46" />
+          <entry key="PHP" value="42075" />
+          <entry key="PLAIN_TEXT" value="54" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -185,8 +133,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/console/controllers/WarningController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="39" column="109" lean-forward="true" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
+            <state relative-caret-position="425">
+              <caret line="94" column="83" lean-forward="true" selection-start-line="94" selection-start-column="83" selection-end-line="94" selection-end-column="83" />
               <folding>
                 <element signature="e#121#151#0#PHP" expanded="true" />
               </folding>
@@ -510,7 +458,7 @@
       <workItem from="1552619849838" duration="11555000" />
       <workItem from="1552650590178" duration="1881000" />
       <workItem from="1552874961978" duration="288000" />
-      <workItem from="1552881990725" duration="15538000" />
+      <workItem from="1552881990725" duration="15794000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1548264072883</created>
@@ -603,11 +551,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552389579031</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="监控预警后台任务">
+      <created>1552900917779</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1552900917779</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368183000" />
+    <option name="totallyTimeSpent" value="368439000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +577,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.155625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.155625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -642,7 +597,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.04875" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.04875" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +623,8 @@
     <MESSAGE value="考试管理" />
     <MESSAGE value="三大模块" />
     <MESSAGE value="oa" />
-    <option name="LAST_COMMIT_MESSAGE" value="oa" />
+    <MESSAGE value="监控预警后台任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="监控预警后台任务" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/header.php">
@@ -950,8 +906,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/console/controllers/WarningController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="39" column="109" lean-forward="true" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
+        <state relative-caret-position="425">
+          <caret line="94" column="83" lean-forward="true" selection-start-line="94" selection-start-column="83" selection-end-line="94" selection-end-column="83" />
           <folding>
             <element signature="e#121#151#0#PHP" expanded="true" />
           </folding>

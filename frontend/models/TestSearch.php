@@ -40,12 +40,13 @@ class TestSearch extends Test
      */
     public function search($params)
     {
-        $query = Test::find();
+        $query = Test::find()->orderBy('status asc');
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => ['pageSize' => 10], //设置分页条数
         ]);
 
         $this->load($params);
