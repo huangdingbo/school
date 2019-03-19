@@ -30,7 +30,7 @@ class WireController extends Controller
     }
 
     /**
-     * Lists all Wire aa.
+     * Lists all Wire models.
      * @return mixed
      */
     public function actionIndex()

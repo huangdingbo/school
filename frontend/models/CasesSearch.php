@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Cases;
 
 /**
- * CasesSearch represents the model behind the search form of `frontend\aa\Cases`.
+ * CasesSearch represents the model behind the search form of `frontend\models\Cases`.
  */
 class CasesSearch extends Cases
 {

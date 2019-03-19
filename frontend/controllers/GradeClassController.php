@@ -35,7 +35,7 @@ class GradeClassController extends Controller
     }
 
     /**
-     * Lists all GradeClass aa.
+     * Lists all GradeClass models.
      * @return mixed
      */
     public function actionIndex()

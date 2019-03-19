@@ -31,7 +31,7 @@ class TitleController extends Controller
     }
 
     /**
-     * Lists all Title aa.
+     * Lists all Title models.
      * @return mixed
      */
     public function actionIndex()

@@ -31,7 +31,7 @@ class PoliticalController extends Controller
     }
 
     /**
-     * Lists all Political aa.
+     * Lists all Political models.
      * @return mixed
      */
     public function actionIndex()

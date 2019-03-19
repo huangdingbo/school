@@ -76,7 +76,7 @@ class ReadGradeModel extends Model
             $zhongbenRadio = (string)(round(($zhongBenNum / $totalNum)*100,'2')) ;
             $benkeNum = $wireModel->benke_num;
             $benkeRadio = (string)(round(($benkeNum / $totalNum)*100,'2'));
-            $offline =  $totalNum - $zhongBenNum - $benkeNum;
+            $offline =  $totalNum - $benkeNum;
             $offlineRadio = (string)(round(($offline / $totalNum)*100,'2'));
             return [
                 'zhongBenNum' => $zhongBenNum,
@@ -118,7 +118,7 @@ class ReadGradeModel extends Model
             ->andWhere(['>=','total',$wire->benke_wire])
             ->count();
         $benkeRadio = (string)(round(($benkeNum / $totalNum)*100,'2')) ;
-        $offline = $totalNum - $zhongbenNum - $benkeNum;
+        $offline = $totalNum - $benkeNum;
         $offlineRadio = (string)(round(($offline / $totalNum)*100,'2')) ;
         return [
             'zhongBenNum' => $zhongbenNum,

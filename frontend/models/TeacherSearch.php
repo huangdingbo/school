@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Teacher;
 
 /**
- * TeacherSearch represents the model behind the search form of `frontend\aa\Teacher`.
+ * TeacherSearch represents the model behind the search form of `frontend\models\Teacher`.
  */
 class TeacherSearch extends Teacher
 {

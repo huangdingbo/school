@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Student;
 
 /**
- * StudentSearch represents the model behind the search form of `frontend\aa\Student`.
+ * StudentSearch represents the model behind the search form of `frontend\models\Student`.
  */
 class StudentSearch extends Student
 {

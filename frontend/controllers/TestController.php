@@ -38,7 +38,7 @@ class TestController extends Controller
     }
 
     /**
-     * Lists all Test aa.
+     * Lists all Test models.
      * @return mixed
      */
     public function actionIndex()

@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Room;
 
 /**
- * RoomSearch represents the model behind the search form of `frontend\aa\Room`.
+ * RoomSearch represents the model behind the search form of `frontend\models\Room`.
  */
 class RoomSearch extends Room
 {

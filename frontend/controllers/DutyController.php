@@ -31,7 +31,7 @@ class DutyController extends Controller
     }
 
     /**
-     * Lists all Duty aa.
+     * Lists all Duty models.
      * @return mixed
      */
     public function actionIndex()

@@ -31,7 +31,7 @@ class DiplomaController extends Controller
     }
 
     /**
-     * Lists all Diploma aa.
+     * Lists all Diploma models.
      * @return mixed
      */
     public function actionIndex()

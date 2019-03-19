@@ -36,7 +36,7 @@ class ScoreController extends Controller
     }
 
     /**
-     * Lists all Score aa.
+     * Lists all Score models.
      * @return mixed
      */
     public function actionIndex()
@@ -73,7 +73,7 @@ class ScoreController extends Controller
 
             $excel = new SaveExcel([
 
-                'aa' => $models,
+                'models' => $models,
 
                 'fields' => $fields,
 

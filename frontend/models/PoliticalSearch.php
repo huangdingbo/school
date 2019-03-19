@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Political;
 
 /**
- * PoliticalSearch represents the model behind the search form of `frontend\aa\Political`.
+ * PoliticalSearch represents the model behind the search form of `frontend\models\Political`.
  */
 class PoliticalSearch extends Political
 {

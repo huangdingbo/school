@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Wire;
 
 /**
- * WireSearch represents the model behind the search form of `frontend\aa\Wire`.
+ * WireSearch represents the model behind the search form of `frontend\models\Wire`.
  */
 class WireSearch extends Wire
 {

@@ -42,7 +42,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Lists all Teacher aa.
+     * Lists all Teacher models.
      * @return mixed
      */
     public function actionIndex()
